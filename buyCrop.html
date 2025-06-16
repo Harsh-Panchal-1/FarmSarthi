@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buy Crop - Market Prices</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7fdf7;
+      margin: 0;
+      color: #1b3815;
+    }
+
+    header {
+      background-color: #0d3311;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .filter {
+      text-align: center;
+      margin: 20px;
+    }
+
+    select {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    table {
+      width: 90%;
+      margin: auto;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    th {
+      background-color: #0d3311;
+      color: white;
+    }
+
+    button {
+      background-color: #1b5e20;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #0d3311;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Market Prices from Certified Sellers</h1>
+  </header>
+
+  <div class="filter">
+    <label for="cropFilter">Filter by Crop:</label>
+    <select id="cropFilter" onchange="filterCrops()">
+      <option value="All">All</option>
+    </select>
+  </div>
+
+  <table id="cropTable">
+    <thead>
+      <tr>
+        <th>Crop</th>
+        <th>Seller</th>
+        <th>Price (per Quintal)</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <footer>
+    <p>&copy; 2025 FarmSarthi. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const mockData = [
+      { crop: 'Wheat', seller: 'AgroMart Inc', price: 2150, sellerId: 'seller1' },
+      { crop: 'Rice', seller: 'Farmers Co.', price: 2400, sellerId: 'seller2' },
+      { crop: 'Maize', seller: 'GreenHarvest', price: 1800, sellerId: 'seller3' },
+      { crop: 'Wheat', seller: 'OrganicFarm', price: 2250, sellerId: 'seller4' },
+      { crop: 'Rice', seller: 'AgroBazaar', price: 2450, sellerId: 'seller5' },
+    ];
+
+    function populateTable() {
+      const tbody = document.querySelector('#cropTable tbody');
+      tbody.innerHTML = '';
+      const crops = new Set(['All']);
+      mockData.forEach(item => {
+        crops.add(item.crop);
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${item.crop}</td>
+          <td>${item.seller}</td>
+          <td>₹${item.price}</td>
+          <td><button onclick="goToSellerPage('${item.sellerId}', '${item.crop}')">Buy</button></td>
+        `;
+        tbody.appendChild(row);
+      });
+      populateFilter([...crops]);
+    }
+
+    function populateFilter(crops) {
+      const filter = document.getElementById('cropFilter');
+      filter.innerHTML = '<option value="All">All</option>';
+      crops.slice(1).forEach(crop => {
+        const option = document.createElement('option');
+        option.value = crop;
+        option.textContent = crop;
+        filter.appendChild(option);
+      });
+    }
+
+    function filterCrops() {
+      const value = document.getElementById('cropFilter').value;
+      const tbody = document.querySelector('#cropTable tbody');
+      tbody.innerHTML = '';
+      mockData.forEach(item => {
+        if (value === 'All' || item.crop === value) {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${item.crop}</td>
+            <td>${item.seller}</td>
+            <td>₹${item.price}</td>
+            <td><button onclick="goToSellerPage('${item.sellerId}', '${item.crop}')">Buy</button></td>
+          `;
+          tbody.appendChild(row);
+        }
+      });
+    }
+
+    function goToSellerPage(sellerId, crop) {
+      window.location.href = `/sellerDetial.html`;
+    }
+
+    populateTable();
+  </script>
+</body>
+</html>

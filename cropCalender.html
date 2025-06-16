@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crop Calendar</title>
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f6fdf7;
+      margin: 0;
+      color: #1d3720;
+    }
+
+    header {
+      background-color: #0d3311;
+      color: #ffffff;
+      text-align: center;
+      padding: 30px 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+
+    .calendar-container {
+      padding: 30px 20px;
+      max-width: 1100px;
+      margin: 30px auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+    }
+
+    .legend {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin: 20px 0 30px;
+      font-size: 15px;
+    }
+
+    .legend span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+    }
+
+    .color-box {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .sow-color { background-color: #c2f0c2; }
+    .harvest-color { background-color: #ffe0b2; }
+
+    footer {
+      background-color: #0d3311;
+      color: white;
+      text-align: center;
+      padding: 18px;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+
+    .fc .fc-daygrid-day.fc-day-today {
+      background-color: #e8f5e9;
+    }
+
+    .fc-event-title {
+      font-weight: 600;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FarmSarthi Crop Calendar</h1>
+    <p style="margin-top: 8px; font-size: 1rem; font-weight: 400;">Plan your sowing and harvesting with accurate timing</p>
+  </header>
+
+  <div class="calendar-container">
+    <div class="legend">
+      <span><span class="color-box sow-color"></span> Sowing Period</span>
+      <span><span class="color-box harvest-color"></span> Harvesting Period</span>
+    </div>
+    <div id='calendar'></div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 FarmSarthi. Empowering Farmers with Smart Solutions.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const calendarEl = document.getElementById('calendar');
+      const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        height: 700,
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: ''
+        },
+        events: [
+          {
+            title: 'Wheat - Sowing',
+            start: '2025-11-01',
+            end: '2025-12-15',
+            display: 'background',
+            backgroundColor: '#c2f0c2'
+          },
+          {
+            title: 'Wheat - Harvesting',
+            start: '2026-03-01',
+            end: '2026-04-15',
+            display: 'background',
+            backgroundColor: '#ffe0b2'
+          },
+          {
+            title: 'Rice - Sowing',
+            start: '2025-06-01',
+            end: '2025-07-15',
+            display: 'background',
+            backgroundColor: '#c2f0c2'
+          },
+          {
+            title: 'Rice - Harvesting',
+            start: '2025-10-01',
+            end: '2025-11-15',
+            display: 'background',
+            backgroundColor: '#ffe0b2'
+          },
+          {
+            title: 'Maize - Sowing',
+            start: '2025-03-01',
+            end: '2025-04-15',
+            display: 'background',
+            backgroundColor: '#c2f0c2'
+          },
+          {
+            title: 'Maize - Harvesting',
+            start: '2025-08-01',
+            end: '2025-09-15',
+            display: 'background',
+            backgroundColor: '#ffe0b2'
+          }
+        ]
+      });
+      calendar.render();
+    });
+  </script>
+</body>
+</html>

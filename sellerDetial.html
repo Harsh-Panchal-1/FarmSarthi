@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seller Detail - FarmSarthi</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f7fdf7;
+      color: #1b3815;
+    }
+
+    header {
+      background-color: #0d3311;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 10px 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .crop-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      background-color: #f8fef8;
+    }
+
+    .crop-card h3 {
+      margin-top: 0;
+      color: #0c4720;
+    }
+
+    label, select, input {
+      display: block;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #1b5e20;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .test-results {
+      margin-top: 10px;
+      background-color: #e6f9e6;
+      padding: 10px;
+      border-left: 4px solid #1b5e20;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: #0d3311;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Seller: OrganicFarm</h1>
+    <p>Explore all crops listed by this seller and buy as per your need.</p>
+  </header>
+
+  <div class="container" id="productList"></div>
+
+  <footer>
+    <p>&copy; 2025 FarmSarthi. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const sellerProducts = [
+      { name: 'Wheat', price: 2250, test: 'Moisture: 12%, Purity: 98%' },
+      { name: 'Barley', price: 1950, test: 'Moisture: 13%, Purity: 96%' },
+      { name: 'Millet', price: 2100, test: 'Moisture: 11%, Purity: 97%' },
+    ];
+
+    function renderProducts() {
+      const container = document.getElementById('productList');
+      sellerProducts.forEach((product) => {
+        const card = document.createElement('div');
+        card.className = 'crop-card';
+
+        card.innerHTML = `
+          <h3>${product.name}</h3>
+          <p><strong>Price:</strong> ₹${product.price} per quintal</p>
+          <div class="test-results">
+            <strong>Quality Test:</strong> ${product.test}
+          </div>
+          <label for="amount-${product.name}">Amount:</label>
+          <input type="number" id="amount-${product.name}" placeholder="Enter quantity" />
+          <label for="unit-${product.name}">Unit:</label>
+          <select id="unit-${product.name}">
+            <option value="kg">Kg</option>
+            <option value="quintal">Quintal</option>
+            <option value="ton">Ton</option>
+          </select>
+          <button onclick="buyProduct('${product.name}')">Buy Now</button>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function buyProduct(productName) {
+      const amount = document.getElementById(`amount-${productName}`).value;
+      const unit = document.getElementById(`unit-${productName}`).value;
+      if (!amount || amount <= 0) {
+        alert('Please enter a valid amount.');
+        return;
+      }
+      alert(`Order placed for ${amount} ${unit} of ${productName}`);
+    }
+
+    renderProducts();
+  </script>
+</body>
+</html>
