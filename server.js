@@ -31,7 +31,7 @@ app.get("/login", (req, res) => {
 // Handle Role Selection and Redirect to Clerk
 app.post("/login", (req, res) => {
     const { role } = req.body;
-    const redirectUrl = https://${process.env.CLERK_DOMAIN}/sign-in?redirect_url=http://localhost:${port}/dashboard&__metadata_role=${role};
+    const redirectUrl = `https://${process.env.CLERK_DOMAIN}/sign-in?redirect_url=http://localhost:${port}/dashboard&__metadata_role=${role}`;
     res.redirect(redirectUrl);
 });
 
@@ -52,5 +52,5 @@ const role = user.privateMetadata?.role || req.query.__metadata_role || "unknown
 });
 
 app.listen(port, () => {
-    console.log(Server running at http://localhost:${port});
+    console.log(`Server running at http://localhost:${port}`);
 });
