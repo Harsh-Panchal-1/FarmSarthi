@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Assets/FarmSarthi Short Logo.png"/>
+
+    <title>FarmSarthi</title>
+    
+    <!-- Google Fonts: Figtree -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* CSS Variables for Colors from the Homepage */
+        :root {
+            --primary-green: #344E41;
+            --secondary-green: #588157;
+            --light-green: #A3B18A;
+            --background-color: #FFFFFF;
+            --card-bg: #FFFFFF;
+            --text-dark: #212529;
+            --text-light: #6c757d;
+            --border-color: #EAEAEA;
+            --font-family: 'Figtree', sans-serif;
+        }
+
+        /* General Body Styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--text-dark);
+        }
+
+        /* Re-using the header from the previous page for consistency
+        .main-header {
+            background-color: var(--card-bg);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-left { display: flex; align-items: center; gap: 1.5rem; }
+        .logo { font-size: 1.8rem; font-weight: 800; color: var(--primary-green); text-decoration: none; }
+        .logo i { margin-right: 8px; }
+        .delivery-info { font-weight: 600; font-size: 1.1rem; border-left: 2px solid var(--border-color); padding-left: 1.5rem; }
+        .delivery-info span { display: block; font-size: 0.9rem; font-weight: 500; color: var(--text-light); }
+        .search-bar { display: flex; align-items: center; background-color: #F8F9FA; border: 1px solid var(--border-color); border-radius: 12px; padding: 0.6rem 1rem; width: 45%; }
+        .search-bar i { color: var(--text-light); }
+        .search-bar input { border: none; outline: none; background: none; width: 100%; margin-left: 0.75rem; font-family: var(--font-family); font-size: 1rem; font-weight: 500; }
+        .header-right { display: flex; align-items: center; gap: 2rem; }
+        .header-right a { color: var(--text-dark); text-decoration: none; font-weight: 600; font-size: 1.1rem; }
+        .cart-btn { background-color: var(--primary-green); color: white; padding: 0.75rem 1.5rem; border-radius: 12px; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+        .cart-btn i { font-size: 1.2rem; } */
+
+        .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+.home-desktop{
+  position: sticky;
+  top: 0rem;
+  z-index: 10;
+}
+
+.navbar .header a{
+  border: none;
+  vertical-align: center;
+  text-decoration: none;
+}
+
+
+.home-desktop .navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(230, 235, 229, 0.846);
+  backdrop-filter: blur(20px);
+}
+
+.home-desktop .header {
+  display: flex;
+  height: 4.5rem;
+  min-height: 55px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  background-color: transparent;
+  padding: 10px 0;
+}
+
+
+.home-desktop .container {
+  margin: 0px 0px;
+  padding: 0px 20px;
+  width: 100%;
+  max-width: 1225px;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+
+.home-desktop .div {
+  display: flex;
+  margin-left: 0;
+  margin-top: 0;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.home-desktop .company-logo {
+  position: relative;
+  width: 12rem;
+  align-items: center;
+}
+
+.home-desktop .navbar .header .div a:focus{
+  outline: none;
+}
+.searchbar{
+  display: flex;
+  border: solid;
+  border-width: 0.5px;
+  border-color: white;
+  border-radius: 1rem;
+  background-color: rgba(7, 57, 0, 0.153);
+  height: 3rem;
+  width: 20rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.search_icon{
+  margin-left: 0.5rem;
+  background-color: transparent;
+  width: 2rem;
+}
+
+.searchbar input[type=text] {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  width: 100%;
+  padding-left: 0.5rem;
+  color: black;
+}
+
+.searchbar input[type=text]:focus{
+  outline: none;
+}
+
+.home-desktop .text {
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.home-desktop .column {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.home-desktop .link-text {
+  display: flex;
+  text-wrap: nowrap;
+  position: relative;
+  font-family: "Figtree", sans-serif;
+  font-weight: 100;
+  color: black;
+  cursor: pointer;
+  transition: color 0.1s ease-in, font-weight 0.1s ease-in;
+}
+
+.home-desktop .link-text:hover {
+  font-weight: bold;
+  color: #073900
+}
+
+.home-desktop .nav-link-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.home-desktop .img {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.home-desktop .actions {
+  justify-content: center;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.home-desktop .button {
+  font-size: 1rem;
+  font-family: "Figtree", sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  position: relative;
+  background-color: rgb(230, 235, 229);
+  border-radius: 12px;
+  border: 2px solid;
+  border-color: black;
+}
+
+.home-desktop .button-2 {
+  position: relative;
+  font-size: 1rem;
+  font-family: "Figtree", sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  position: relative;
+  color: white;
+  background-color: rgb(7, 57, 0);
+  border-radius: 12px;
+  border: none;
+}
+
+.home-desktop .mega-menu.open {
+  display: flex;
+}
+
+.home-desktop .mega-menu {
+  display: none;
+  position: absolute;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(230, 235, 229);
+  z-index: 100;
+  flex-direction: column;
+}
+
+.home-desktop .menu {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 32px 32px;
+  flex-wrap: wrap;
+  background-color: rgba(230, 235, 229, 0.846);
+  backdrop-filter: blur(20px);
+}
+
+.home-desktop .menu-list {
+  flex-direction: column;
+  width: 20%;
+  gap: 16px;
+  display: flex;
+  position: relative;
+}
+
+.home-desktop .text-wrapper-2 {
+  position: relative;
+  font-size: 1.2rem;
+  display: flex;
+  font-family: "Figtree", sans-serif;
+  font-weight: 600;
+  color: black;
+}
+
+.home-desktop .list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  width: 100%;
+}
+
+.home-desktop .menu-item {
+  gap: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.home-desktop .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.home-desktop .text-wrapper-3 {
+  position: relative;
+  display: flex;
+  font-family: "Figtree", sans-serif;
+  font-weight: 600;
+  color: black;
+}
+
+.menu-item a{
+  text-decoration: none;
+}
+
+.home-desktop .sub-content {
+  position: relative;
+  align-self: flex-start;
+  font-family: "Figtree", sans-serif;
+  color: black;
+  line-height: 1.2rem;
+}
+
+.home-desktop .blog {
+  display: flex;
+  width: 45%;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.home-desktop .blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  position: relative;
+}
+
+.home-desktop .blog-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 8px 0px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.home-desktop .placeholder-image {
+  position: relative;
+  width: 160px;
+  height: 107px;
+  object-fit: cover;
+}
+
+.home-desktop .content-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+}
+
+.home-desktop .content-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  position: relative;
+  width: 100%;
+}
+
+.home-desktop .text-wrapper-4 {
+  position: relative;
+  text-decoration: underline;
+  font-size: 1px;
+  font-family: "Figtree", sans-serif;
+}
+
+        /* Main Product Detail Container */
+        .product-detail-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Left Column: Product Gallery */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+        }
+
+        .thumbnail-gallery {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+        }
+
+        .thumbnail-gallery img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .thumbnail-gallery img:hover, .thumbnail-gallery img.active {
+            border-color: var(--primary-green);
+        }
+
+        /* Right Column: Product Info & Sellers */
+        .product-info-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .breadcrumbs {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        .breadcrumbs a { color: var(--secondary-green); text-decoration: none; }
+
+        .product-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .product-meta .delivery-time {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+
+        .price-and-cart {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.5rem;
+            background-color: #F8F9FA;
+            border-radius: 12px;
+        }
+
+        .price-details .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        .price-details .unit {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .add-to-cart-main {
+            background-color: var(--secondary-green);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .add-to-cart-main:hover {
+            background-color: var(--primary-green);
+        }
+        
+        /* Sellers Section */
+        .sellers-section {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .sellers-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .sellers-header h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .grade-filter select {
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            font-family: var(--font-family);
+            font-size: 1rem;
+            background-color: white;
+            cursor: pointer;
+        }
+        
+        .seller-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .seller-item {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .seller-name { font-weight: 600; }
+        .seller-grade {
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+            text-align: center;
+        }
+        .grade-a { background-color: var(--secondary-green); }
+        .grade-b { background-color: #fca311; }
+        .grade-c { background-color: #d62828; }
+        
+        .seller-price { font-weight: 700; font-size: 1.1rem; }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .product-detail-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .main-header { flex-wrap: wrap; gap: 1rem; }
+            .search-bar { order: 3; width: 100%; }
+            .delivery-info { display: none; }
+            .product-detail-container { padding: 0 1rem; margin-top: 1rem; }
+            .product-title { font-size: 2rem; }
+            .price-and-cart { flex-direction: column; align-items: stretch; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <!-- <header class="main-header">
+        <div class="header-left">
+            <a href="#" class="logo"><i class="fa-solid fa-leaf"></i>FarmSarthi</a>
+            <div class="delivery-info">
+                Delivery in 2 Days
+                <span>Kothri Kalan, MP & Nearby</span>
+            </div>
+        </div>
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search for Crops or Seeds...">
+        </div>
+        <div class="header-right">
+            <a href="#">Login</a>
+            <a href="#" class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>My Cart</span>
+            </a>
+        </div>
+    </header> -->
+  <div class="home-desktop">
+    <div class="navbar">
+      <header class="header">
+        <div class="container">
+          <div class="div" style="margin: 0px 0px;">
+            <a href="Homepage.html">
+              <div><img class="company-logo" src="Assets/Logo.png" /></div>
+            </a>
+            <div class="searchbar">
+              <img class="search_icon" src="Assets/Search.png">
+              <input type="text" placeholder="Search your Crop/Seed......">
+            </div>
+            <div class="column">
+              <div class="link-text">Market Prices</div>
+              <a href="index.html">
+              <div class="link-text">About Us</div></a>
+              <div class="nav-link-dropdown">
+                <div class="link-text">More Features</div>
+                <img class="img" src="Assets/Drop Down.png" />
+              </div>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="button">Join</button>
+            <button class="button-2">Login</button>
+          </div>
+        </div>
+      </header>
+      <div class="mega-menu">
+        <div class="menu">
+          <div class="menu-list">
+            <div class="text-wrapper-2">Explore Our Services</div>
+            <div class="list">
+              <div class="menu-item">
+                <img class="img" src="Assets/Buy Crops.png" />
+                <a href="buyCrop.html">
+                  <div class="content">
+                    <div class="text-wrapper-3">Buy Crops</div>
+                    <p class="sub-content">Discover the best crop prices today!</p>
+                  </div>
+                </a>
+              </div>
+              <div class="menu-item">
+                <img class="img" src="Assets/Sell Crops.png" />
+                <a href="sellCrop.html">
+                <div class="content">
+                  <div class="text-wrapper-3">Sell Crops</div>
+                  <p class="sub-content">List your crops for potential buyers.</p>
+                </div>
+                </a>
+              </div>
+              <div class="menu-item">
+                <img class="img" src="Assets/Crop Calendar.png" />
+                <a href="cropCalender.html">
+                  <div class="content">
+                    <div class="text-wrapper-3">Crop Calendar</div>
+                    <p class="sub-content">Stay updated on planting and harvesting times.</p>
+                  </div>
+                </a>
+              </div>
+              <div class="menu-item">
+                <img class="img" src="Assets/User Login.png" />
+                <a href="loginPage.html">
+                <div class="content">
+                  <div class="text-wrapper-3">User Login</div>
+                  <p class="sub-content">Access your account to manage listings.</p>
+                </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="menu-list">
+            <div class="text-wrapper-2">Latest Articles</div>
+            <div class="list">
+              <div class="menu-item">
+                <img class="img" src="Assets/Articles.png" />
+                <div class="content-2">
+                  <div class="text-wrapper-3">Farming Tips</div>
+                  <p class="sub-content">Learn best practices for successful farming.</p>
+                </div>
+              </div>
+              <div class="menu-item">
+                <img class="img" src="Assets/Articles.png" />
+                <div class="content-2">
+                  <div class="text-wrapper-3">Market Insights</div>
+                  <p class="sub-content">Understand market trends to maximize profits.</p>
+                </div>
+              </div>
+              <div class="menu-item">
+                <img class="img" src="Assets/Articles.png" />
+                <div class="content-2">
+                  <div class="text-wrapper-3">Weather Updates</div>
+                  <p class="sub-content">Get real-time weather forecasts for your area.</p>
+                </div>
+              </div>
+              <div class="menu-item">
+                <img class="img" src="Assets/Articles.png" />
+                <div class="content-2">
+                  <div class="text-wrapper-3">Success Stories</div>
+                  <p class="sub-content">Read about farmers who succeeded with us.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="blog">
+          <div class="text-wrapper-2">From Our Blog</div>
+          <div class="blog-list">
+            <div class="blog-item">
+              <img class="placeholder-image" src="Assets/Placeholder Image.png"/>
+              <div class="content-3">
+                <div class="content-4">
+                  <div class="text-wrapper-3">Harvest Techniques</div>
+                  <p class="sub-content">Explore innovative methods for better yields.</p>
+                </div>
+                <div class="text-wrapper-4">Read more</div>
+              </div>
+            </div>
+            <div class="blog-item">
+              <img class="placeholder-image" src="Assets/Placeholder Image.png" />
+              <div class="content-3">
+                <div class="content-4">
+                  <div class="text-wrapper-3">Market Trends</div>
+                  <p class="sub-content">Stay ahead with the latest market analysis.</p>
+                </div>
+                <div class="text-wrapper-4">Read more</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+    <!-- Main Page Content -->
+    <main class="product-detail-container">
+        <!-- Product Gallery (Left) -->
+        <section class="product-gallery">
+            <div class="main-image">
+                <img id="mainProductImage" src="https://placehold.co/600x600/FFF1E6/495057?text=Wheat+Grains" alt="Wheat Grains">
+            </div>
+            <div class="thumbnail-gallery">
+                <img src="https://placehold.co/100x100/FFF1E6/495057?text=Wheat+1" alt="Wheat thumbnail 1" class="active" onclick="changeImage(this.src)">
+                <img src="https://placehold.co/100x100/FFF1E6/495057?text=Wheat+2" alt="Wheat thumbnail 2" onclick="changeImage(this.src)">
+                <img src="https://placehold.co/100x100/FFF1E6/495057?text=Field" alt="Wheat field thumbnail" onclick="changeImage(this.src)">
+                <img src="https://placehold.co/100x100/FFF1E6/495057?text=Sack" alt="Sack of wheat thumbnail" onclick="changeImage(this.src)">
+            </div>
+        </section>
+
+        <!-- Product Info & Sellers (Right) -->
+        <section class="product-info-wrapper">
+            <div class="product-main-details">
+                <div class="breadcrumbs">
+                    <a href="#">Home</a> / <a href="#">Popular Crops</a> / Wheat Grains
+                </div>
+                <h1 class="product-title">Wheat Grains (Lokwan Variety)</h1>
+                <div class="product-meta">
+                    <div class="delivery-time"><i class="fa-solid fa-truck-fast"></i> Estimated delivery in 2 days</div>
+                </div>
+                <p class="product-description">
+                    High-quality Lokwan wheat sourced directly from trusted farms. Known for its excellent taste and nutritional value, it's perfect for making soft chapatis, bread, and other baked goods. This grain is cleaned and processed under hygienic conditions to ensure you get the best product.
+                </p>
+                <div class="price-and-cart">
+                    <div class="price-details">
+                        <div class="price">₹2500</div>
+                        <div class="unit">(per Quintal)</div>
+                    </div>
+                    <button class="add-to-cart-main">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Sellers Section -->
+            <div class="sellers-section">
+                <div class="sellers-header">
+                    <h3>Available from other sellers</h3>
+                    <div class="grade-filter">
+                        <select name="grade" id="grade-select">
+                            <option value="all">All Grades</option>
+                            <option value="a">A Grade</option>
+                            <option value="b">B Grade</option>
+                            <option value="c">C Grade</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="seller-list">
+                    <div class="seller-item">
+                        <div class="seller-name">Ramkishan Farms</div>
+                        <div class="seller-grade grade-a">A Grade</div>
+                        <div class="seller-price">₹2550</div>
+                    </div>
+                    <div class="seller-item">
+                        <div class="seller-name">Sehore Mandi Traders</div>
+                        <div class="seller-grade grade-b">B Grade</div>
+                        <div class="seller-price">₹2480</div>
+                    </div>
+                     <div class="seller-item">
+                        <div class="seller-name">Gupta Agro Store</div>
+                        <div class="seller-grade grade-a">A Grade</div>
+                        <div class="seller-price">₹2600</div>
+                    </div>
+                    <div class="seller-item">
+                        <div class="seller-name">Local Farmer Co-op</div>
+                        <div class="seller-grade grade-c">C Grade</div>
+                        <div class="seller-price">₹2300</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script>
+      
+        // Simple JavaScript to handle image gallery functionality
+        function changeImage(newSrc) {
+            // Set the main image source to the clicked thumbnail's source
+            document.getElementById('mainProductImage').src = newSrc.replace('100x100', '600x600');
+            
+            // Update the 'active' class on thumbnails
+            const thumbnails = document.querySelectorAll('.thumbnail-gallery img');
+            thumbnails.forEach(thumb => {
+                // Check if the thumbnail's src corresponds to the new main image src
+                if (newSrc.includes(thumb.src.split('?text=')[1])) {
+                    thumb.classList.add('active');
+                } else {
+                    thumb.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
