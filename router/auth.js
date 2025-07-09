@@ -5,7 +5,10 @@ router.get("/", (req, res) => {
   if (req.session.user) {
     res.redirect("/dashboard");
   } else {
-    res.render("login");
+    res.render("login",{env:{
+      API_KEY: process.env.API_KEY,
+      AUTH_DOMAIN: process.env.AUTH_DOMAIN,
+    }});
   }
 });
 
