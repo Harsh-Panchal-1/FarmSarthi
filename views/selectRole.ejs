@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Role | FarmSarthi</title>
+  <link rel="icon" type="image/png" href="/img/FarmSarthi Short Logo.png"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree">
+  <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Figtree", sans-serif !important;
+      }
+
+      body {
+        line-height: 1.6;
+        color: #333;
+        background-color: #e6ebe5;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+      .home-desktop {
+        position: sticky;
+        top: 0rem;
+        z-index: 10;
+      }
+
+      .navbar .header a {
+        border: none;
+        vertical-align: center;
+        text-decoration: none;
+      }
+
+      .home-desktop .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: rgba(230, 235, 229, 0.846);
+        backdrop-filter: blur(20px);
+      }
+
+      .home-desktop .header {
+        display: flex;
+        height: auto;
+        min-height: 55px;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        background-color: transparent;
+        padding: 0.75rem 0;
+      }
+
+      .home-desktop .container {
+        margin: 0px 0px;
+        padding: 0px 0px;
+        width: 100%;
+        max-width: 1225px;
+        align-items: center;
+        justify-content: space-between;
+        flex-grow: 1;
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+      }
+
+      .home-desktop .div {
+        display: flex;
+        margin-left: 0;
+        margin-top: 0;
+        align-items: center;
+        gap: 24px;
+        position: relative;
+        flex-wrap: wrap;
+      }
+
+      .home-desktop .company-logo {
+        position: relative;
+        width: 12rem;
+        align-items: center;
+      }
+
+      .home-desktop .navbar .header .div a:focus {
+        outline: none;
+      }
+      .searchbar {
+        display: flex;
+        border: solid;
+        border-width: 0.5px;
+        border-color: white;
+        border-radius: 1rem;
+        background-color: rgba(7, 57, 0, 0.153);
+        height: 3rem;
+        width: 20rem;
+        align-items: center;
+        justify-items: center;
+      }
+
+      .search_icon {
+        margin-left: 0.5rem;
+        background-color: transparent;
+        width: 2rem;
+      }
+
+      .searchbar input[type="text"] {
+        border: none;
+        background-color: transparent;
+        font-size: 1rem;
+        width: 100%;
+        padding-left: 0.5rem;
+        color: black;
+      }
+
+      .searchbar input[type="text"]:focus {
+        outline: none;
+      }
+
+      .home-desktop .text {
+        margin-top: 0.5rem;
+        font-size: 1.25rem;
+      }
+
+      .home-desktop .column {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+        position: relative;
+        flex-wrap: wrap;
+      }
+
+      .home-desktop .link-text {
+        display: flex;
+        text-wrap: nowrap;
+        position: relative;
+        font-family: "Figtree", sans-serif;
+        font-weight: 100;
+        color: black;
+        cursor: pointer;
+        transition: color 0.1s ease-in, font-weight 0.1s ease-in;
+      }
+
+      .home-desktop .link-text:hover {
+        font-weight: bold;
+        color: #073900;
+      }
+
+      .home-desktop .nav-link-dropdown {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .home-desktop .img {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
+
+      .home-desktop .actions {
+        justify-content: center;
+        gap: 1rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+        flex-wrap: wrap;
+      }
+
+      .home-desktop .button {
+        font-size: 1rem;
+        font-family: "Figtree", sans-serif;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 20px;
+        position: relative;
+        background-color: rgb(230, 235, 229);
+        border-radius: 12px;
+        border: 2px solid;
+        border-color: black;
+      }
+
+      .home-desktop .button-2 {
+        position: relative;
+        font-size: 1rem;
+        font-family: "Figtree", sans-serif;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px;
+        position: relative;
+        color: white;
+        background-color: rgb(7, 57, 0);
+        border-radius: 12px;
+        border: none;
+        transition: 0.2s;
+      }
+      .home-desktop .button-2:hover {
+        transform: scale(1);
+        color: black;
+        background-color: #e6ebe5;
+        border-radius: 12px;
+        border: 2px solid;
+        border-color: black;
+        cursor: pointer;
+      }
+
+      .home-desktop .mega-menu.open {
+        display: flex;
+      }
+
+      .home-desktop .mega-menu {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(230, 235, 229);
+        z-index: 100;
+        flex-direction: column;
+      }
+
+      .home-desktop .menu {
+        display: flex;
+        align-items: flex-start;
+        gap: 32px;
+        padding: 32px 32px;
+        flex-wrap: wrap;
+        background-color: rgba(230, 235, 229, 0.846);
+        backdrop-filter: blur(20px);
+      }
+
+      .home-desktop .menu-list {
+        flex-direction: column;
+        width: 20%;
+        gap: 16px;
+        display: flex;
+        position: relative;
+      }
+
+      .home-desktop .text-wrapper-2 {
+        position: relative;
+        font-size: 1.2rem;
+        display: flex;
+        font-family: "Figtree", sans-serif;
+        font-weight: 600;
+        color: black;
+      }
+
+      .home-desktop .list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        position: relative;
+        width: 100%;
+      }
+
+      .home-desktop .menu-item {
+        gap: 1rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      .home-desktop .content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+      }
+
+      .home-desktop .text-wrapper-3 {
+        position: relative;
+        display: flex;
+        font-family: "Figtree", sans-serif;
+        font-weight: 600;
+        color: black;
+      }
+
+      .menu-item a {
+        text-decoration: none;
+      }
+
+      .home-desktop .sub-content {
+        position: relative;
+        align-self: flex-start;
+        font-family: "Figtree", sans-serif;
+        color: black;
+        line-height: 1.2rem;
+      }
+
+      .home-desktop .blog {
+        display: flex;
+        width: 45%;
+        flex-direction: column;
+        gap: 16px;
+        position: relative;
+      }
+
+      .home-desktop .blog-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        position: relative;
+      }
+
+      .home-desktop .blog-item {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 8px 0px;
+        position: relative;
+        flex-wrap: wrap;
+      }
+
+      .home-desktop .placeholder-image {
+        position: relative;
+        width: 160px;
+        height: 107px;
+        object-fit: cover;
+      }
+
+      .home-desktop .content-3 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        position: relative;
+      }
+
+      .home-desktop .content-4 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        position: relative;
+        width: 100%;
+      }
+
+      .home-desktop .text-wrapper-4 {
+        position: relative;
+        text-decoration: underline;
+        font-size: 1px;
+        font-family: "Figtree", sans-serif;
+      }
+
+      /* Hamburger Menu Styles */
+      .hamburger-menu {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        cursor: pointer;
+        padding: 10px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 11; /* Ensure it's above other elements */
+      }
+
+      .hamburger-menu .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 4px 0;
+        transition: 0.4s;
+      }
+
+      /* Styles for the mobile navigation links */
+      .nav-links-mobile {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(230, 235, 229, 0.95);
+        backdrop-filter: blur(20px);
+        position: absolute;
+        top: 72px; /* Below the header */
+        left: 0;
+        padding: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 9;
+      }
+
+      .nav-links-mobile.active {
+        display: flex; /* Show when active */
+      }
+
+      .nav-links-mobile .link-text,
+      .nav-links-mobile .nav-link-dropdown,
+      .nav-links-mobile .button,
+      .nav-links-mobile .button-2 {
+        padding: 10px 0;
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .nav-links-mobile .button,
+      .nav-links-mobile .button-2 {
+        margin-top: 10px;
+        border-bottom: none;
+      }
+
+      /* Login Page */
+      .login-main {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+      }
+
+      .login-container {
+        width: 100%;
+        max-width: 450px;
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .login-container h2 {
+        margin-bottom: 20px;
+        font-size: 2em;
+        color: #073900;
+      }
+
+      .user-type-toggle {
+        display: flex;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 25px;
+      }
+
+      .user-type-toggle label {
+        flex: 1;
+        padding: 12px;
+        cursor: pointer;
+        background-color: #f0f0f0;
+        color: #555;
+        transition: background-color 0.3s, color 0.3s;
+        font-weight: 500;
+      }
+
+      .user-type-toggle input[type="radio"] {
+        display: none;
+      }
+
+      .user-type-toggle input[type="radio"]:checked + label {
+        background-color: #073900;
+        color: #fff;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      .input-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 12px 15px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 1em;
+      }
+
+      .input-group input:focus {
+        outline: none;
+        border-color: #073900;
+        box-shadow: 0 0 0 2px rgba(7, 57, 0, 0.2);
+      }
+
+      .btn-login {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 8px;
+        background-color: #073900;
+        color: white;
+        font-size: 1.1em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+      }
+
+      .btn-login:hover {
+        background-color: #052a00;
+        transform: translateY(-2px);
+      }
+
+      #otp-form {
+        display: none;
+      }
+
+      .login-footer-text {
+        margin-top: 25px;
+        font-size: 0.9em;
+        color: #666;
+      }
+
+      .login-footer-text a {
+        color: #073900;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .login-footer-text a:hover {
+        text-decoration: underline;
+      }
+
+      /* Footer */
+      .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 80px;
+        background-color: rgb(7, 57, 0);
+        position: relative;
+        padding: 4rem 2rem;
+      }
+
+      .footer .footer-links {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        position: relative;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .footer .container-3 {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.25rem;
+        display: flex;
+        position: relative;
+      }
+
+      .footer .content-8 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        position: relative;
+        width: 100%;
+      }
+
+      .footer .logo {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .footer .company-logo {
+        position: relative;
+        width: 12rem;
+      }
+      .footer .links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 32px 32px;
+        width: 100%;
+      }
+      .footer .text-wrapper-6 {
+        color: white;
+      }
+      .footer .credits {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        color: white;
+      }
+      .footer .divider-2 {
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        height: 2px;
+        margin-top: -2px;
+      }
+      .footer .row-3 {
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .footer .text-wrapper-8 {
+        position: relative;
+        width: fit-content;
+        text-align: center;
+      }
+      .text-wrapper-9 {
+        text-decoration: underline;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .home-desktop .container {
+          /* Ensure logo and hamburger are on one line, spaced out */
+          justify-content: space-between;
+          gap: 0; /* Remove gap */
+          flex-wrap: nowrap; /* Prevent container from wrapping its direct children (logo and hamburger) */
+        }
+
+        /* Ensure the div containing the logo remains visible and its layout is correct */
+        .home-desktop .div {
+          display: flex; /* Keep it as flex to contain the logo */
+          align-items: center;
+          gap: 0; /* No gap needed if only logo is visible */
+          width: auto; /* Allow it to take only necessary width */
+          min-height: 72px; /* Match header min-height for vertical alignment */
+        }
+
+        /* Hide specific elements within the desktop navigation */
+        .home-desktop .div .searchbar, /* Hide the searchbar on small screens */
+    .home-desktop .column, /* Hide the desktop navigation links */
+    .home-desktop .actions {
+          /* Hide the desktop action buttons */
+          display: none;
+        }
+
+        .hamburger-menu {
+          display: flex; /* Show hamburger menu */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .home-desktop .header .container {
+          flex-direction: row; /* Keep logo and hamburger in a row */
+          align-items: center;
+        }
+        .footer .row-3 {
+          flex-direction: column;
+          text-align: center;
+        }
+        .login-container {
+          padding: 30px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .login-container {
+          padding: 20px;
+          box-shadow: none;
+          border-radius: 0;
+        }
+        .login-container h2 {
+          font-size: 1.8em;
+        }
+        .searchbar {
+          width: 90%; /* Adjust width for very small screens */
+        }
+      }
+    </style>
+</head>
+<body>
+
+  <%- include('component/navbar.ejs') %>
+
+  <main class="login-main">
+    <div class="login-container">
+      <h2>Select Your Role</h2>
+      <form method="POST" action="/select-role">
+        <div class="user-type-toggle">
+          <input type="radio" id="buyer" name="role" value="buyer" required>
+          <label for="buyer">Buyer</label>
+          <input type="radio" id="seller" name="role" value="seller" required>
+          <label for="seller">Seller</label>
+        </div>
+        <button type="submit" class="btn-login">Continue</button>
+      </form>
+      <p class="login-footer-text">Trial Accounts: <strong>+919119761165, +919999988888</strong> with OTP: <strong>985312</strong></p>
+    </div>
+  </main>
+
+  <%- include('component/footer.ejs') %>
+
+</body>
+</html>

@@ -178,6 +178,7 @@ a {
   background-color: rgb(7, 57, 0);
   border-radius: 12px;
   border: none;
+  cursor: pointer;
 }
 
 .home-desktop .mega-menu {
@@ -332,7 +333,7 @@ a {
   display: flex;
   justify-content: center;
   position: relative;
-  background: url('Assets/Background\ 2.png'), rgb(230, 235, 229);
+  background: url('img/Background\ 2.png'), rgb(230, 235, 229);
   background-size: cover;
   background-position: top;
   height: 600px;

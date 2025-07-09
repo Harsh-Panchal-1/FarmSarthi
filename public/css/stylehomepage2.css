@@ -198,6 +198,7 @@ body {
   background-color: rgb(7, 57, 0);
   border-radius: 12px;
   border: none;
+  cursor: pointer;
 }
 
 .home-desktop .mega-menu.open {
@@ -345,7 +346,7 @@ body {
 .trending-banner {
   position: relative;
   background: linear-gradient(to left, rgba(255,255,255,0),
-              rgba(8, 67, 0, 0.932) 60%), url("Assets/Basmati Rice.jpg");
+              rgba(8, 67, 0, 0.932) 60%), url("img/Basmati Rice.jpg");
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
@@ -670,7 +671,7 @@ body {
     }
     
     .trending-banner {
-        background: linear-gradient(to top, rgba(8, 67, 0, 0.932) 20%, rgba(255,255,255,0) 100%), url(Assets/Basmati\ Rice.jpg);
+        background: linear-gradient(to top, rgba(8, 67, 0, 0.932) 20%, rgba(255,255,255,0) 100%), url(img/Basmati\ Rice.jpg);
         background-size: cover;
         background-position: center;
         justify-content: center;
