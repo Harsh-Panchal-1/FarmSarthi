@@ -9,7 +9,7 @@ const app = express();
 const port = 3000;
 
 mongoose
-  .connect("mongodb+srv://mark47harsh:XMzGVXzSnG6UscCU@trail.qbsirmk.mongodb.net/?retryWrites=true&w=majority&appName=Trail", {
+  .connect( process.env.MONGO_URL , {
   })
   .then(() => console.log("✅ Connected to MongoDB"))
   .catch((err) => console.error("❌ MongoDB connection error:", err));

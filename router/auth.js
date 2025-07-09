@@ -1,4 +1,6 @@
-const express = require("express")
+const express = require("express");
+const User = require("../model/user");
+const admin = require("../firebase")
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -24,7 +26,7 @@ router.post("/verify", async (req, res) => {
     if (!user) {
       // User is logging in for the first time
       req.session.user = { uid, phone, role: null };
-      return res.redirect("/select-role");
+      return res.redirect("/login/select-role");
     }
 
     // Existing user
@@ -34,7 +36,7 @@ router.post("/verify", async (req, res) => {
       role: user.role,
     };
 
-    res.redirect("/dashboard");
+    res.redirect("/");
   } catch (err) {
     console.error("Token verification error:", err);
     res.status(401).send("Unauthorized");
@@ -57,7 +59,7 @@ router.post("/select-role", async (req, res) => {
   await User.create({ uid, phone, role });
 
   req.session.user.role = role;
-  res.redirect("/dashboard");
+  res.redirect("/");
 });
 
 module.exports = router;
