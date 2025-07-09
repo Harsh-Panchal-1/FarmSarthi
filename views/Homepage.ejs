@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmSarthi</title>
+    <link rel="icon" type="image/png" href="img/FarmSarthi Short Logo.png"/>
+    <link rel="stylesheet" href="css/stylehomepage2.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree">
+</head>
+<body>
+  <%- include('component/navbar.ejs') %>
+  
+  <main class="main-content">
+      <div class="container">
+          <section class="hero-banner trending-banner">
+              <div class="trending-content">
+                  <span class="tag">TRENDING NOW</span>
+                  <h2>Basmati Rice: The Star Crop of Kothri Kalan!</h2>
+                  <p>High demand and excellent prices. Secure your yield today for maximum profit.</p>
+                  <a href="#basmati-rice" class="btn-primary">View Basmati Rice Details</a>
+              </div>
+          </section>
+
+          <section class="product-category" id="crops">
+            <div class="product-category-title">
+              <h3>Popular Crops</h3>
+              <h5>View all</h5>
+            </div>
+            <div class="product-grid horizontal-scroll">
+                <div class="product-card">
+                    <img src="img/Wheat.webp" alt="Wheat Grains">
+                    <div class="product-info">
+                        <h4 class="product-title">Wheat Grains (Lokwan Variety)</h4>
+                        <p class="product-description">Premium quality Lokwan wheat, ideal for chapati.</p>
+                        <div class="product-price">₹ 2500<span class="unit">/Quintal</span></div>
+                        <button class="btn-add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" id="basmati-rice">
+                    <img src="img/Basmati Rice.jpg" alt="Basmati Rice">
+                    <div class="product-info">
+                        <h4 class="product-title">Basmati Rice (Pusa 1121)</h4>
+                        <p class="product-description">Aromatic long-grain rice, export quality.</p>
+                        <div class="product-price">₹ 6500<span class="unit">/Quintal</span></div>
+                        <button class="btn-add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="img/Maize.jpg" alt="Maize Corn">
+                    <div class="product-info">
+                        <h4 class="product-title">Maize Corn (Hybrid Yellow)</h4>
+                        <p class="product-description">High yield hybrid maize for fodder and grain.</p>
+                        <div class="product-price">₹ 1800<span class="unit">/Quintal</span></div>
+                        <button class="btn-add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="img/Soybean.webp" alt="Soybean">
+                    <div class="product-info">
+                        <h4 class="product-title">Soybean (JS-335 Variety)</h4>
+                        <p class="product-description">Popular soybean variety with good oil content.</p>
+                        <div class="product-price">₹ 4500<span class="unit">/Quintal</span></div>
+                        <button class="btn-add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="img/Chana Dal.webp" alt="Chana Dal">
+                    <div class="product-info">
+                        <h4 class="product-title">Chana Dal (Desi)</h4>
+                        <p class="product-description">Locally grown, high protein chana dal.</p>
+                        <div class="product-price">₹ 5200<span class="unit">/Quintal</span></div>
+                        <button class="btn-add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                  <div class="product-card">
+                    <img src="img/Raw Cotton.avif" alt="Cotton">
+                    <div class="product-info">
+                        <h4 class="product-title">Raw Cotton (Long Staple)</h4>
+                        <p class="product-description">Premium cotton for textile industry.</p>
+                        <div class="product-price">₹ 7000<span class="unit">/Quintal</span></div>
+                        <button class="btn-add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+          </section>
+
+          <section class="product-category" id="seeds">
+            <div class="product-category-title">
+              <h3>Premium Seeds</h3>
+              <h5>View all</h5>
+            </div>
+              <div class="product-grid horizontal-scroll">
+                  <div class="product-card">
+                      <img src="img/Paddy Seeds Sona Masuri.webp" alt="Paddy Seeds">
+                      <div class="product-info">
+                          <h4 class="product-title">Paddy Seeds (Sona Masuri)</h4>
+                          <p class="product-description">High-germination paddy seeds for robust growth.</p>
+                          <div class="product-price">₹ 1200<span class="unit">/10 kg</span></div>
+                          <button class="btn-add-to-cart">Add to Cart</button>
+                      </div>
+                  </div>
+                  <div class="product-card">
+                      <img src="img/Cotton Seeds BT Hybrid.jpg" alt="Cotton Seeds">
+                      <div class="product-info">
+                          <h4 class="product-title">Cotton Seeds (BT Hybrid)</h4>
+                          <p class="product-description">Disease-resistant BT cotton seeds for higher yields.</p>
+                          <div class="product-price">₹ 850<span class="unit">/Packet</span></div>
+                          <button class="btn-add-to-cart">Add to Cart</button>
+                      </div>
+                  </div>
+                  <div class="product-card">
+                      <img src="img/Vegetable Mix Seeds.webp" alt="Vegetable Mix Seeds">
+                      <div class="product-info">
+                          <h4 class="product-title">Vegetable Mix Seeds (Organic)</h4>
+                          <p class="product-description">Assorted organic vegetable seeds for home gardens.</p>
+                          <div class="product-price">₹ 300<span class="unit">/Packet</span></div>
+                          <button class="btn-add-to-cart">Add to Cart</button>
+                      </div>
+                  </div>
+                  <div class="product-card">
+                      <img src="img/Mustard Seeds (Yellow Sarson).jpg" alt="Mustard Seeds">
+                      <div class="product-info">
+                          <h4 class="product-title">Mustard Seeds (Yellow Sarson)</h4>
+                          <p class="product-description">High oil content mustard seeds for oil production.</p>
+                          <div class="product-price">₹ 700<span class="unit">/5 kg</span></div>
+                          <button class="btn-add-to-cart">Add to Cart</button>
+                      </div>
+                  </div>
+                  <div class="product-card">
+                      <img src="img/Tomato Seeds.jpg" alt="Tomato Seeds">
+                      <div class="product-info">
+                          <h4 class="product-title">Tomato Seeds (Hybrid F1)</h4>
+                          <p class="product-description">High-yielding, disease-resistant tomato seeds.</p>
+                          <div class="product-price">₹ 150<span class="unit">/Packet</span></div>
+                          <button class="btn-add-to-cart">Add to Cart</button>
+                      </div>
+                  </div>
+                  <div class="product-card">
+                      <img src="img/Bajra Seeds (Green Fodder).jpeg" alt="Bajra Seeds">
+                      <div class="product-info">
+                          <h4 class="product-title">Bajra Seeds (Green Fodder)</h4>
+                          <p class="product-description">Fast-growing bajra for nutritious animal fodder.</p>
+                          <div class="product-price">₹ 900<span class="unit">/2 kg</span></div>
+                          <button class="btn-add-to-cart">Add to Cart</button>
+                      </div>
+                  </div>
+              </div>
+          </section>
+      </div>
+  </main>
+
+  <%- include('component/footer.ejs') %>
+  <script src="js/script.js"></script>
+</body>
+</html>

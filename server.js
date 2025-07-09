@@ -1,54 +1,71 @@
 require("dotenv").config();
 const express = require("express");
 const path = require("path");
-const {
-    ClerkExpressRequireAuth,
-    ClerkExpressWithAuth,
-    users
-} = require("@clerk/clerk-sdk-node");
+const authRoute = require("./router/auth");
+const mongoose = require('mongoose');
+const session = require('express-session');
 
 const app = express();
 const port = 3000;
+
+mongoose
+  .connect("mongodb+srv://mark47harsh:XMzGVXzSnG6UscCU@trail.qbsirmk.mongodb.net/?retryWrites=true&w=majority&appName=Trail", {
+  })
+  .then(() => console.log("✅ Connected to MongoDB"))
+  .catch((err) => console.error("❌ MongoDB connection error:", err));
+
+
+app.use(
+  session({
+    secret: "farmsarthi_secret",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
-// Clerk middleware
-app.use(ClerkExpressWithAuth());
 
-// Public Landing Page
+app.use("/login", authRoute)
+
+
 app.get("/", (req, res) => {
-    res.render("index");
+    res.render("Homepage.ejs");
+});
+app.get("/aboutUs", (req, res) => {
+    res.render("Homepage.ejs");
 });
 
-// Role Selection Form
-app.get("/login", (req, res) => {
-    res.render("select-role");
+app.get("/buy-crop", (req, res) => {
+    res.render("buyCrop.ejs");
 });
 
-// Handle Role Selection and Redirect to Clerk
-app.post("/login", (req, res) => {
-    const { role } = req.body;
-    const redirectUrl = `https://${process.env.CLERK_DOMAIN}/sign-in?redirect_url=http://localhost:${port}/dashboard&__metadata_role=${role}`;
-    res.redirect(redirectUrl);
+app.get("/sell-crop", (req, res) => {
+    res.render("sellCrop.ejs");
 });
 
-// Protected Dashboard
-app.get("/dashboard", ClerkExpressRequireAuth(), async (req, res) => {
-    const user = await users.getUser(req.auth.userId);
+app.get("/crop-calendar", (req, res) => {
+    res.render("cropCalender.ejs");
+});
 
-  // Save role to metadata if not saved already
-if (!user.privateMetadata?.role && req.query.__metadata_role) {
-    await users.updateUserMetadata(req.auth.userId, {
-        privateMetadata: { role: req.query.__metadata_role }
-    });
-}
+app.get("/login-page", (req, res) => {
+    res.render("loginPage.ejs");
+});
 
-const role = user.privateMetadata?.role || req.query.__metadata_role || "unknown";
 
-    res.render("dashboard", { userId: user.id, role });
+app.get("/seller-detail", (req, res) => {
+    // Example products and sellerName; you can fetch from DB instead
+    const sellerName = "OrganicFarm";
+    const products = [
+        { name: "Wheat", price: 2250, test: "Moisture: 12%, Purity: 98%" },
+        { name: "Barley", price: 1950, test: "Moisture: 13%, Purity: 96%" },
+        { name: "Millet", price: 2100, test: "Moisture: 11%, Purity: 97%" },
+    ];
+
+    res.render("sellerDetail.ejs", { sellerName, products });
 });
 
 app.listen(port, () => {
