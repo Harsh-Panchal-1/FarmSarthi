@@ -94,6 +94,10 @@ app.get("/trends", (req, res) => {
   const isUserLoggedIn = req.session.user ? true : false;
   res.render("trends", { isUserLoggedIn });
 });
+app.get("/aboutus", (req, res) => {
+  const isUserLoggedIn = req.session.user ? true : false;
+  res.render("aboutUs", { isUserLoggedIn });
+});
 
 app.get('/tips', async (req, res) => {
   const tips = await readTips();
