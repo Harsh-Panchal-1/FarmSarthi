@@ -95,8 +95,8 @@ app.get("/trends", (req, res) => {
   res.render("trends", { isUserLoggedIn });
 });
 
-app.get('/tips', (req, res) => {
-  const tips = readTips();
+app.get('/tips', async (req, res) => {
+  const tips = await readTips();
   const page = parseInt(req.query.page) || 1;
   const perPage = 10;
 
@@ -106,7 +106,9 @@ app.get('/tips', (req, res) => {
   const paginatedTips = tips.slice(start, end);
   const totalPages = Math.ceil(tips.length / perPage);
 
-  res.render('farmingtips', {
+  const isUserLoggedIn = req.session.user ? true : false;
+
+  res.render('tips', {isUserLoggedIn,
     farming_tips: paginatedTips,
     currentPage: page,
     totalPages: totalPages

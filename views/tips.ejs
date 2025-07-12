@@ -3,9 +3,11 @@
 <head>
   <title>Farming Tips</title>
   <link rel="stylesheet" href="/css/tips.css">
+    <link rel="stylesheet" href="/css/stylehomepage2.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap">
 </head>
 <body>
+  <%- include("component/navbar.ejs") %>
   <h1>🌱 Farming Tips</h1>
 
   <% farming_tips.forEach(tip => { %>
@@ -37,5 +39,6 @@
       <a href="/tips?page=<%= currentPage + 1 %>">Next</a>
     <% } %>
   </div>
+  <%- include("component/footer.ejs") %>
 </body>
 </html>
