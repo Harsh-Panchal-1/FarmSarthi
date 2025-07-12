@@ -19,20 +19,20 @@
             <div class="summary-details">
                 <h2>Order Summary</h2>
                 <div class="detail-item">
-                    <strong>Product:</strong> <span id="product-name">Basmati Rice (Pusa 1121)</span>
+                    <strong>Product:</strong> <span id="product-name"><%= product.name %></span>
                 </div>
                 <div class="detail-item">
-                    <strong>Seller:</strong> <span id="seller-name">Kisan Singh</span>
+                    <strong>Seller:</strong> <span id="seller-name"><%= product.sellerID.name %></span>
                 </div>
                 <div class="detail-item">
-                    <strong>Contact Number:</strong> <span id="seller-contact">+91 98765 43210</span>
+                    <strong>Contact Number:</strong> <span id="seller-contact"><%= product.sellerID.phone %></span>
                 </div>
                 <div class="detail-item">
                     <strong>Expected Delivery: </strong> <span id="seller-contact">16 July 2025</span>
                 </div>
-                <div class="seller-grade grade-a">A Grade</div>
+                <div class="seller-grade grade-a"><%= product.tag[1] %></div>
                 <div class="detail-item product-rate">
-                    <strong>Rate:</strong> ₹ <span id="product-rate-value">6500</span><span class="unit">/Quintal</span>
+                    <strong>Rate:</strong> ₹ <span id="product-rate-value"><%= product.price %></span><span class="unit">/Quintal</span>
                 </div>
 
             </div>
@@ -45,7 +45,7 @@
                     <input type="number" id="quantity" value="1" min="1">
                 </div>
                 <div class="total-price-display">
-                    Total: ₹ <span id="total-price">6500</span>
+                    Total: ₹ <span id="total-price"><%= product.price %></span>
                 </div>
                 <button class="confirm-button">Confirm Deal</button>
             </div>
@@ -53,7 +53,7 @@
     </main>
 
     <%- include('component/footer.ejs') %>
-
+    <script type="module" src="/js/script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const quantityInput = document.getElementById('quantity');

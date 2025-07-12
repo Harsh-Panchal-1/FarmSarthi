@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Success Stories | FarmSarthi</title>
+  <link rel="stylesheet" href="/css/successStories.css">
+  <link rel="stylesheet" href="/css/stylehomepage2.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+<%- include("component/navbar.ejs") %>
+  <header>
+    <h1>🌾 Success Stories</h1>
+    <p>Real stories of impact through FarmSarthi</p>
+  </header>
+
+  <section class="story-list">
+
+    <!-- Card 1 -->
+    <div class="story-card card-light">
+      <div class="story-image">
+        <img src="/img/farmer1.png" alt="Ramesh Yadav">
+      </div>
+      <div class="story-content">
+        <h2>Ramesh Yadav</h2>
+        <p>Ramesh, a wheat farmer from Madhya Pradesh, used to sell his produce in the local mandi. After joining FarmSarthi, he now delivers directly to stores in three cities and has seen his income double.</p>
+        <span class="tag">🌾 Farmer</span>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="story-card card-dark">
+      <div class="story-image">
+        <img src="/img/farmer2.png" alt="Anita Sharma">
+      </div>
+      <div class="story-content">
+        <h2>Anita Sharma</h2>
+        <p>A chef and entrepreneur from Pune, Anita buys seasonal fruits directly from verified FarmSarthi farmers. She praises the freshness, pricing, and traceability.</p>
+        <span class="tag">🛒 Buyer</span>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="story-card card-light">
+      <div class="story-image">
+        <img src="/img/farmer3.png" alt="Vikram Singh">
+      </div>
+      <div class="story-content">
+        <h2>Vikram Singh</h2>
+        <p>Vikram, a 26-year-old hydroponic farmer, found new urban markets using FarmSarthi’s buyer portal. He now runs a small cooperative with five other young growers.</p>
+        <span class="tag">🧑‍🌾 Young Farmer</span>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="story-card card-dark">
+      <div class="story-image">
+        <img src="/img/farmer4.png" alt="Jain Supermart">
+      </div>
+      <div class="story-content">
+        <h2>Jain Supermart</h2>
+        <p>This retail chain sources directly from verified FarmSarthi sellers, eliminating intermediaries and ensuring better margins for farmers and buyers alike.</p>
+        <span class="tag">🏬 Buyer</span>
+      </div>
+    </div>
+
+  </section>
+  <%- include('component/footer.ejs') %>
+</body>
+</html>

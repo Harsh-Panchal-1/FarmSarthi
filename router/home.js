@@ -1,5 +1,6 @@
 const express = require("express");
 const Product = require("../model/product");
+const User = require("../model/user");
 const isAuthenticated = require("../middleware/authCheck");
 const router = express.Router();
 
@@ -24,7 +25,6 @@ router.get("/market-prices", async (req,res) =>{
 router.get("/dashboard", isAuthenticated, async (req,res) =>{
     const user = req.session.user ? true : false;
     const userData = req.session.user;
-    console.log(userData)
 
     res.render('sellerDashboard', { isUserLoggedIn: user, user: userData})
 })
@@ -36,9 +36,11 @@ router.get("/list-product", isAuthenticated, async (req,res) =>{
     res.render('listProduct', { isUserLoggedIn: user, user: userData})
 })
 
-router.get("/payment",isAuthenticated, (req, res) => {
+router.get("/payment/:id",isAuthenticated, async (req, res) => {
+  const { id } = req.params;
+  const response = await Product.findById(id).populate("sellerID");
   const user = req.session.user ? true : false;
-  res.render("payment", { isUserLoggedIn: user });
+  res.render("payment", { isUserLoggedIn: user, product: response });
 });
 
 module.exports = router;

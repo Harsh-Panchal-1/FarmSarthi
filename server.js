@@ -70,6 +70,29 @@ app.post('/logout', (req, res) => {
   });
 });
 
+app.get("/successStories", (req, res) => {
+  const isUserLoggedIn = req.session.user ? true : false;
+  res.render("successStories", { isUserLoggedIn });
+});
+
+app.get("/marketInsights", (req, res) => {
+  const isUserLoggedIn = req.session.user ? true : false;
+  res.render("marketInsights", { isUserLoggedIn });
+});
+
+app.get("/harvest", (req, res) => {
+  const isUserLoggedIn = req.session.user ? true : false;
+  res.render("harvest", { isUserLoggedIn });
+});
+
+app.get("/trends", (req, res) => {
+  const isUserLoggedIn = req.session.user ? true : false;
+  res.render("trends", { isUserLoggedIn });
+});
+
+
+
+
 
 app.get("/seller-detail", (req, res) => {
     // Example products and sellerName; you can fetch from DB instead
