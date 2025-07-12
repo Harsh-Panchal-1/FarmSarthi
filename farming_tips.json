@@ -1,0 +1,702 @@
+[
+  {
+    "crop": "Mustard",
+    "title": "Disease Tip for Mustard",
+    "content": "Check the field regularly to detect early disease symptoms.",
+    "category": "disease",
+    "date": "2025-04-28"
+  },
+  {
+    "crop": "Sugarcane",
+    "title": "Irrigation Tip for Sugarcane",
+    "content": "Early action is crucial to control irrigation problems.",
+    "category": "irrigation",
+    "date": "2025-06-23"
+  },
+  {
+    "crop": "Barley",
+    "title": "Soil Tip for Barley",
+    "content": "Avoid overuse of chemicals to prevent soil issues.",
+    "category": "soil",
+    "date": "2025-06-21"
+  },
+  {
+    "crop": "Wheat",
+    "title": "Planting Tip for Wheat",
+    "content": "Use organic practices to improve planting conditions.",
+    "category": "planting",
+    "date": "2025-07-02"
+  },
+  {
+    "crop": "Soybean",
+    "title": "Planting Tip for Soybean",
+    "content": "Implement drip systems for efficient planting.",
+    "category": "planting",
+    "date": "2025-05-11"
+  },
+  {
+    "crop": "Rice",
+    "title": "Irrigation Tip for Rice",
+    "content": "Implement drip systems for efficient irrigation.",
+    "category": "irrigation",
+    "date": "2025-06-27"
+  },
+  {
+    "crop": "Cotton",
+    "title": "Soil Tip for Cotton",
+    "content": "Use natural methods to deal with soil challenges.",
+    "category": "soil",
+    "date": "2025-06-01"
+  },
+  {
+    "crop": "Tomato",
+    "title": "Water Tip for Tomato",
+    "content": "Avoid overuse of chemicals to prevent water issues.",
+    "category": "water",
+    "date": "2025-07-10"
+  },
+  {
+    "crop": "Sugarcane",
+    "title": "Planting Tip for Sugarcane",
+    "content": "Practice crop rotation to improve planting quality.",
+    "category": "planting",
+    "date": "2025-04-29"
+  },
+  {
+    "crop": "Peas",
+    "title": "Climate Tip for Peas",
+    "content": "Practice crop rotation to improve climate quality.",
+    "category": "climate",
+    "date": "2025-05-30"
+  },
+  {
+    "crop": "Peas",
+    "title": "Irrigation Tip for Peas",
+    "content": "Ensure proper irrigation management for better yield.",
+    "category": "irrigation",
+    "date": "2025-05-25"
+  },
+  {
+    "crop": "Peas",
+    "title": "Harvesting Tip for Peas",
+    "content": "Use natural methods to deal with harvesting challenges.",
+    "category": "harvesting",
+    "date": "2025-04-22"
+  },
+  {
+    "crop": "Maize",
+    "title": "Water Tip for Maize",
+    "content": "Avoid overuse of chemicals to prevent water issues.",
+    "category": "water",
+    "date": "2025-04-27"
+  },
+  {
+    "crop": "Tomato",
+    "title": "Support Tip for Tomato",
+    "content": "Regularly monitor the crop for support signs.",
+    "category": "support",
+    "date": "2025-04-29"
+  },
+  {
+    "crop": "Tomato",
+    "title": "Fertilizer Tip for Tomato",
+    "content": "Use natural methods to deal with fertilizer challenges.",
+    "category": "fertilizer",
+    "date": "2025-05-12"
+  },
+  {
+    "crop": "Rice",
+    "title": "Support Tip for Rice",
+    "content": "Practice crop rotation to improve support quality.",
+    "category": "support",
+    "date": "2025-07-09"
+  },
+  {
+    "crop": "Wheat",
+    "title": "Disease Tip for Wheat",
+    "content": "Ensure proper disease management for better yield.",
+    "category": "disease",
+    "date": "2025-05-25"
+  },
+  {
+    "crop": "Cotton",
+    "title": "Harvesting Tip for Cotton",
+    "content": "Practice crop rotation to improve harvesting quality.",
+    "category": "harvesting",
+    "date": "2025-04-13"
+  },
+  {
+    "crop": "Rice",
+    "title": "Climate Tip for Rice",
+    "content": "Implement drip systems for efficient climate.",
+    "category": "climate",
+    "date": "2025-06-18"
+  },
+  {
+    "crop": "Rice",
+    "title": "Harvesting Tip for Rice",
+    "content": "Early action is crucial to control harvesting problems.",
+    "category": "harvesting",
+    "date": "2025-06-09"
+  },
+  {
+    "crop": "Mustard",
+    "title": "Climate Tip for Mustard",
+    "content": "Use natural methods to deal with climate challenges.",
+    "category": "climate",
+    "date": "2025-05-09"
+  },
+  {
+    "crop": "Tomato",
+    "title": "Harvesting Tip for Tomato",
+    "content": "Avoid overuse of chemicals to prevent harvesting issues.",
+    "category": "harvesting",
+    "date": "2025-06-11"
+  },
+  {
+    "crop": "Tomato",
+    "title": "Soil Tip for Tomato",
+    "content": "Use natural methods to deal with soil challenges.",
+    "category": "soil",
+    "date": "2025-05-03"
+  },
+  {
+    "crop": "Rice",
+    "title": "Disease Tip for Rice",
+    "content": "Use organic practices to improve disease conditions.",
+    "category": "disease",
+    "date": "2025-04-25"
+  },
+  {
+    "crop": "Barley",
+    "title": "Disease Tip for Barley",
+    "content": "Use organic practices to improve disease conditions.",
+    "category": "disease",
+    "date": "2025-05-27"
+  },
+  {
+    "crop": "Maize",
+    "title": "Support Tip for Maize",
+    "content": "Early action is crucial to control support problems.",
+    "category": "support",
+    "date": "2025-05-12"
+  },
+  {
+    "crop": "Tomato",
+    "title": "Fertilizer Tip for Tomato",
+    "content": "Ensure proper fertilizer management for better yield.",
+    "category": "fertilizer",
+    "date": "2025-06-12"
+  },
+  {
+    "crop": "Sugarcane",
+    "title": "Climate Tip for Sugarcane",
+    "content": "Ensure proper climate management for better yield.",
+    "category": "climate",
+    "date": "2025-05-07"
+  },
+  {
+    "crop": "Sugarcane",
+    "title": "Planting Tip for Sugarcane",
+    "content": "Ensure proper planting management for better yield.",
+    "category": "planting",
+    "date": "2025-05-31"
+  },
+  {
+    "crop": "Mustard",
+    "title": "Support Tip for Mustard",
+    "content": "Regularly monitor the crop for support signs.",
+    "category": "support",
+    "date": "2025-05-11"
+  },
+  {
+    "crop": "Maize",
+    "title": "Pests Tip for Maize",
+    "content": "Ensure proper pests management for better yield.",
+    "category": "pests",
+    "date": "2025-05-13"
+  },
+  {
+    "crop": "Wheat",
+    "title": "Pests Tip for Wheat",
+    "content": "Ensure proper pests management for better yield.",
+    "category": "pests",
+    "date": "2025-06-26"
+  },
+  {
+    "crop": "Mustard",
+    "title": "Irrigation Tip for Mustard",
+    "content": "Check the field regularly to detect early irrigation symptoms.",
+    "category": "irrigation",
+    "date": "2025-07-03"
+  },
+  {
+    "crop": "Cotton",
+    "title": "Harvesting Tip for Cotton",
+    "content": "Practice crop rotation to improve harvesting quality.",
+    "category": "harvesting",
+    "date": "2025-05-02"
+  },
+  {
+    "crop": "Soybean",
+    "title": "Irrigation Tip for Soybean",
+    "content": "Use organic practices to improve irrigation conditions.",
+    "category": "irrigation",
+    "date": "2025-05-02"
+  },
+  {
+    "crop": "Sugarcane",
+    "title": "Climate Tip for Sugarcane",
+    "content": "Check the field regularly to detect early climate symptoms.",
+    "category": "climate",
+    "date": "2025-07-10"
+  },
+  {
+    "crop": "Barley",
+    "title": "Water Tip for Barley",
+    "content": "Regularly monitor the crop for water signs.",
+    "category": "water",
+    "date": "2025-07-08"
+  },
+  {
+    "crop": "Peas",
+    "title": "Support Tip for Peas",
+    "content": "Practice crop rotation to improve support quality.",
+    "category": "support",
+    "date": "2025-06-20"
+  },
+  {
+    "crop": "Maize",
+    "title": "Fertilizer Tip for Maize",
+    "content": "Use natural methods to deal with fertilizer challenges.",
+    "category": "fertilizer",
+    "date": "2025-04-28"
+  },
+  {
+    "crop": "Cotton",
+    "title": "Soil Tip for Cotton",
+    "content": "Implement drip systems for efficient soil.",
+    "category": "soil",
+    "date": "2025-06-16"
+  },
+  {
+    "crop": "Mustard",
+    "title": "Climate Tip for Mustard",
+    "content": "Maintain appropriate spacing during climate season.",
+    "category": "climate",
+    "date": "2025-07-03"
+  },
+  {
+    "crop": "Barley",
+    "title": "Pests Tip for Barley",
+    "content": "Use organic practices to improve pests conditions.",
+    "category": "pests",
+    "date": "2025-07-04"
+  },
+  {
+    "crop": "Tomato",
+    "title": "Soil Tip for Tomato",
+    "content": "Use natural methods to deal with soil challenges.",
+    "category": "soil",
+    "date": "2025-06-26"
+  },
+  {
+    "crop": "Sugarcane",
+    "title": "Harvesting Tip for Sugarcane",
+    "content": "Use natural methods to deal with harvesting challenges.",
+    "category": "harvesting",
+    "date": "2025-05-11"
+  },
+  {
+    "crop": "Peas",
+    "title": "Pests Tip for Peas",
+    "content": "Check the field regularly to detect early pests symptoms.",
+    "category": "pests",
+    "date": "2025-05-23"
+  },
+  {
+    "crop": "Sugarcane",
+    "title": "Water Tip for Sugarcane",
+    "content": "Maintain appropriate spacing during water season.",
+    "category": "water",
+    "date": "2025-05-06"
+  },
+  {
+    "crop": "Barley",
+    "title": "Harvesting Tip for Barley",
+    "content": "Check the field regularly to detect early harvesting symptoms.",
+    "category": "harvesting",
+    "date": "2025-06-10"
+  },
+  {
+    "crop": "Soybean",
+    "title": "Pests Tip for Soybean",
+    "content": "Practice crop rotation to improve pests quality.",
+    "category": "pests",
+    "date": "2025-06-08"
+  },
+  {
+    "crop": "Mustard",
+    "title": "Pests Tip for Mustard",
+    "content": "Use natural methods to deal with pests challenges.",
+    "category": "pests",
+    "date": "2025-07-06"
+  },
+  {
+    "crop": "Barley",
+    "title": "Disease Tip for Barley",
+    "content": "Use natural methods to deal with disease challenges.",
+    "category": "disease",
+    "date": "2025-06-15"
+  },
+  {
+    "crop": "Sugarcane",
+    "title": "Irrigation Tip for Sugarcane",
+    "content": "Ensure proper irrigation management for better yield.",
+    "category": "irrigation",
+    "date": "2025-05-27"
+  },
+  {
+    "crop": "Sugarcane",
+    "title": "Fertilizer Tip for Sugarcane",
+    "content": "Check the field regularly to detect early fertilizer symptoms.",
+    "category": "fertilizer",
+    "date": "2025-05-17"
+  },
+  {
+    "crop": "Wheat",
+    "title": "Disease Tip for Wheat",
+    "content": "Use natural methods to deal with disease challenges.",
+    "category": "disease",
+    "date": "2025-05-11"
+  },
+  {
+    "crop": "Maize",
+    "title": "Irrigation Tip for Maize",
+    "content": "Early action is crucial to control irrigation problems.",
+    "category": "irrigation",
+    "date": "2025-06-21"
+  },
+  {
+    "crop": "Tomato",
+    "title": "Support Tip for Tomato",
+    "content": "Practice crop rotation to improve support quality.",
+    "category": "support",
+    "date": "2025-04-27"
+  },
+  {
+    "crop": "Maize",
+    "title": "Harvesting Tip for Maize",
+    "content": "Avoid overuse of chemicals to prevent harvesting issues.",
+    "category": "harvesting",
+    "date": "2025-06-11"
+  },
+  {
+    "crop": "Maize",
+    "title": "Water Tip for Maize",
+    "content": "Avoid overuse of chemicals to prevent water issues.",
+    "category": "water",
+    "date": "2025-04-29"
+  },
+  {
+    "crop": "Peas",
+    "title": "Pests Tip for Peas",
+    "content": "Use organic practices to improve pests conditions.",
+    "category": "pests",
+    "date": "2025-04-19"
+  },
+  {
+    "crop": "Peas",
+    "title": "Support Tip for Peas",
+    "content": "Early action is crucial to control support problems.",
+    "category": "support",
+    "date": "2025-05-18"
+  },
+  {
+    "crop": "Sugarcane",
+    "title": "Water Tip for Sugarcane",
+    "content": "Use organic practices to improve water conditions.",
+    "category": "water",
+    "date": "2025-05-30"
+  },
+  {
+    "crop": "Mustard",
+    "title": "Irrigation Tip for Mustard",
+    "content": "Maintain appropriate spacing during irrigation season.",
+    "category": "irrigation",
+    "date": "2025-06-25"
+  },
+  {
+    "crop": "Sugarcane",
+    "title": "Water Tip for Sugarcane",
+    "content": "Use natural methods to deal with water challenges.",
+    "category": "water",
+    "date": "2025-05-11"
+  },
+  {
+    "crop": "Maize",
+    "title": "Pests Tip for Maize",
+    "content": "Regularly monitor the crop for pests signs.",
+    "category": "pests",
+    "date": "2025-06-28"
+  },
+  {
+    "crop": "Wheat",
+    "title": "Support Tip for Wheat",
+    "content": "Avoid overuse of chemicals to prevent support issues.",
+    "category": "support",
+    "date": "2025-06-06"
+  },
+  {
+    "crop": "Soybean",
+    "title": "Fertilizer Tip for Soybean",
+    "content": "Use natural methods to deal with fertilizer challenges.",
+    "category": "fertilizer",
+    "date": "2025-05-01"
+  },
+  {
+    "crop": "Sugarcane",
+    "title": "Water Tip for Sugarcane",
+    "content": "Maintain appropriate spacing during water season.",
+    "category": "water",
+    "date": "2025-05-13"
+  },
+  {
+    "crop": "Tomato",
+    "title": "Water Tip for Tomato",
+    "content": "Ensure proper water management for better yield.",
+    "category": "water",
+    "date": "2025-06-18"
+  },
+  {
+    "crop": "Barley",
+    "title": "Support Tip for Barley",
+    "content": "Use organic practices to improve support conditions.",
+    "category": "support",
+    "date": "2025-05-07"
+  },
+  {
+    "crop": "Wheat",
+    "title": "Fertilizer Tip for Wheat",
+    "content": "Avoid overuse of chemicals to prevent fertilizer issues.",
+    "category": "fertilizer",
+    "date": "2025-04-25"
+  },
+  {
+    "crop": "Barley",
+    "title": "Fertilizer Tip for Barley",
+    "content": "Early action is crucial to control fertilizer problems.",
+    "category": "fertilizer",
+    "date": "2025-07-12"
+  },
+  {
+    "crop": "Peas",
+    "title": "Planting Tip for Peas",
+    "content": "Regularly monitor the crop for planting signs.",
+    "category": "planting",
+    "date": "2025-06-23"
+  },
+  {
+    "crop": "Peas",
+    "title": "Support Tip for Peas",
+    "content": "Early action is crucial to control support problems.",
+    "category": "support",
+    "date": "2025-05-13"
+  },
+  {
+    "crop": "Mustard",
+    "title": "Climate Tip for Mustard",
+    "content": "Avoid overuse of chemicals to prevent climate issues.",
+    "category": "climate",
+    "date": "2025-06-29"
+  },
+  {
+    "crop": "Cotton",
+    "title": "Irrigation Tip for Cotton",
+    "content": "Use natural methods to deal with irrigation challenges.",
+    "category": "irrigation",
+    "date": "2025-06-12"
+  },
+  {
+    "crop": "Tomato",
+    "title": "Irrigation Tip for Tomato",
+    "content": "Avoid overuse of chemicals to prevent irrigation issues.",
+    "category": "irrigation",
+    "date": "2025-04-19"
+  },
+  {
+    "crop": "Cotton",
+    "title": "Irrigation Tip for Cotton",
+    "content": "Ensure proper irrigation management for better yield.",
+    "category": "irrigation",
+    "date": "2025-07-07"
+  },
+  {
+    "crop": "Tomato",
+    "title": "Irrigation Tip for Tomato",
+    "content": "Practice crop rotation to improve irrigation quality.",
+    "category": "irrigation",
+    "date": "2025-05-28"
+  },
+  {
+    "crop": "Peas",
+    "title": "Water Tip for Peas",
+    "content": "Ensure proper water management for better yield.",
+    "category": "water",
+    "date": "2025-07-07"
+  },
+  {
+    "crop": "Tomato",
+    "title": "Planting Tip for Tomato",
+    "content": "Avoid overuse of chemicals to prevent planting issues.",
+    "category": "planting",
+    "date": "2025-04-24"
+  },
+  {
+    "crop": "Wheat",
+    "title": "Irrigation Tip for Wheat",
+    "content": "Implement drip systems for efficient irrigation.",
+    "category": "irrigation",
+    "date": "2025-05-19"
+  },
+  {
+    "crop": "Mustard",
+    "title": "Harvesting Tip for Mustard",
+    "content": "Use organic practices to improve harvesting conditions.",
+    "category": "harvesting",
+    "date": "2025-04-18"
+  },
+  {
+    "crop": "Cotton",
+    "title": "Water Tip for Cotton",
+    "content": "Maintain appropriate spacing during water season.",
+    "category": "water",
+    "date": "2025-06-14"
+  },
+  {
+    "crop": "Wheat",
+    "title": "Support Tip for Wheat",
+    "content": "Early action is crucial to control support problems.",
+    "category": "support",
+    "date": "2025-05-19"
+  },
+  {
+    "crop": "Wheat",
+    "title": "Planting Tip for Wheat",
+    "content": "Implement drip systems for efficient planting.",
+    "category": "planting",
+    "date": "2025-05-30"
+  },
+  {
+    "crop": "Tomato",
+    "title": "Planting Tip for Tomato",
+    "content": "Avoid overuse of chemicals to prevent planting issues.",
+    "category": "planting",
+    "date": "2025-05-14"
+  },
+  {
+    "crop": "Rice",
+    "title": "Water Tip for Rice",
+    "content": "Ensure proper water management for better yield.",
+    "category": "water",
+    "date": "2025-04-28"
+  },
+  {
+    "crop": "Rice",
+    "title": "Pests Tip for Rice",
+    "content": "Practice crop rotation to improve pests quality.",
+    "category": "pests",
+    "date": "2025-04-24"
+  },
+  {
+    "crop": "Cotton",
+    "title": "Soil Tip for Cotton",
+    "content": "Avoid overuse of chemicals to prevent soil issues.",
+    "category": "soil",
+    "date": "2025-07-11"
+  },
+  {
+    "crop": "Tomato",
+    "title": "Planting Tip for Tomato",
+    "content": "Check the field regularly to detect early planting symptoms.",
+    "category": "planting",
+    "date": "2025-06-08"
+  },
+  {
+    "crop": "Sugarcane",
+    "title": "Disease Tip for Sugarcane",
+    "content": "Check the field regularly to detect early disease symptoms.",
+    "category": "disease",
+    "date": "2025-04-19"
+  },
+  {
+    "crop": "Soybean",
+    "title": "Harvesting Tip for Soybean",
+    "content": "Practice crop rotation to improve harvesting quality.",
+    "category": "harvesting",
+    "date": "2025-05-05"
+  },
+  {
+    "crop": "Soybean",
+    "title": "Fertilizer Tip for Soybean",
+    "content": "Ensure proper fertilizer management for better yield.",
+    "category": "fertilizer",
+    "date": "2025-05-28"
+  },
+  {
+    "crop": "Rice",
+    "title": "Climate Tip for Rice",
+    "content": "Use natural methods to deal with climate challenges.",
+    "category": "climate",
+    "date": "2025-05-28"
+  },
+  {
+    "crop": "Wheat",
+    "title": "Pests Tip for Wheat",
+    "content": "Early action is crucial to control pests problems.",
+    "category": "pests",
+    "date": "2025-06-15"
+  },
+  {
+    "crop": "Tomato",
+    "title": "Support Tip for Tomato",
+    "content": "Use natural methods to deal with support challenges.",
+    "category": "support",
+    "date": "2025-05-08"
+  },
+  {
+    "crop": "Rice",
+    "title": "Planting Tip for Rice",
+    "content": "Practice crop rotation to improve planting quality.",
+    "category": "planting",
+    "date": "2025-05-23"
+  },
+  {
+    "crop": "Sugarcane",
+    "title": "Disease Tip for Sugarcane",
+    "content": "Regularly monitor the crop for disease signs.",
+    "category": "disease",
+    "date": "2025-07-06"
+  },
+  {
+    "crop": "Rice",
+    "title": "Planting Tip for Rice",
+    "content": "Regularly monitor the crop for planting signs.",
+    "category": "planting",
+    "date": "2025-07-04"
+  },
+  {
+    "crop": "Peas",
+    "title": "Disease Tip for Peas",
+    "content": "Avoid overuse of chemicals to prevent disease issues.",
+    "category": "disease",
+    "date": "2025-07-08"
+  },
+  {
+    "crop": "Cotton",
+    "title": "Fertilizer Tip for Cotton",
+    "content": "Use natural methods to deal with fertilizer challenges.",
+    "category": "fertilizer",
+    "date": "2025-06-05"
+  }
+]
