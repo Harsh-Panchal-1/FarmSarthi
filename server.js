@@ -90,6 +90,11 @@ app.get("/trends", (req, res) => {
   res.render("trends", { isUserLoggedIn });
 });
 
+app.get("/tips", (req, res) => {
+  const isUserLoggedIn = req.session.user ? true : false;
+  res.render("tips", { isUserLoggedIn });
+});
+
 
 
 
