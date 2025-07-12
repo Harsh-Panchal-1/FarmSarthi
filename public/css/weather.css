@@ -8,22 +8,25 @@
 body {
   background-color: #E6EBE5;
   min-height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   color: #fff;
 }
 
 
 .weather-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   width: 100%;
-  max-width: 400px;
+  margin-bottom: 10rem;
 }
 
 
 .search-bar {
+  width: 400px;
   display: flex;
   padding: 1rem;
   justify-content: center;
@@ -51,6 +54,7 @@ body {
 
 
 .weather-card {
+  width: 400px;
   display: none;
   background: #073900;
   backdrop-filter: blur(10px);
