@@ -1,7 +1,10 @@
+*{
+  font-family: 'Figtree', sans-serif !important;
+}
+
 body {
-  font-family: 'Poppins', sans-serif;
   margin: 0;
-  background: #f5f5f5;
+  background-color: #E6EBE5;
   color: #333;
 }
 
@@ -35,6 +38,7 @@ header p {
   align-items: center;
   width: 80%;
   border-radius: 16px;
+  background: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s;
@@ -42,6 +46,7 @@ header p {
 }
 
 .story-card:hover {
+  background: #e8f5e9;
   transform: translateY(-4px);
 }
 
@@ -82,10 +87,6 @@ header p {
 
 .card-light {
   background: white;
-}
-
-.card-dark {
-  background: #e8f5e9;
 }
 
 @media screen and (max-width: 768px) {

@@ -377,6 +377,7 @@ body {
   width: 160px;
   height: 107px;
   object-fit: cover;
+  border-radius: 12px;
 }
 
 .home-desktop .content-3 {
@@ -399,8 +400,9 @@ body {
 .home-desktop .text-wrapper-4 {
   position: relative;
   text-decoration: underline;
-  font-size: 1px;
+  font-size: 1rem;
   font-family: "Figtree", sans-serif;
+  color: #000;
 }
 
 .trending-banner {
