@@ -95,13 +95,25 @@ app.get("/trends", (req, res) => {
   res.render("trends", { isUserLoggedIn });
 });
 
-app.get("/tips", (req, res) => {
+app.get('/tips', async (req, res) => {
+  const tips = await readTips();
+  const page = parseInt(req.query.page) || 1;
+  const perPage = 10;
+
+  const start = (page - 1) * perPage;
+  const end = page * perPage;
+
+  const paginatedTips = tips.slice(start, end);
+  const totalPages = Math.ceil(tips.length / perPage);
+
   const isUserLoggedIn = req.session.user ? true : false;
-  res.render("tips", { isUserLoggedIn });
+
+  res.render('tips', {isUserLoggedIn,
+    farming_tips: paginatedTips,
+    currentPage: page,
+    totalPages: totalPages
+  });
 });
-
-
-
 
 
 app.get("/seller-detail", (req, res) => {
