@@ -42,26 +42,6 @@ app.use("/login", authRoute);
 app.use("/product", productRoute);
 
 
-app.get("/aboutUs", (req, res) => {
-    res.render("Homepage.ejs");
-});
-
-app.get("/buy-crop", (req, res) => {
-    res.render("buyCrop.ejs");
-});
-
-app.get("/sell-crop", (req, res) => {
-    res.render("sellCrop.ejs");
-});
-
-app.get("/crop-calendar", (req, res) => {
-    res.render("cropCalender.ejs");
-});
-
-app.get("/login-page", (req, res) => {
-    res.render("loginPage.ejs");
-});
-
 app.get('/profile', (req, res) => {
   // render user profile page
   res.render('profile', { user: req.user });

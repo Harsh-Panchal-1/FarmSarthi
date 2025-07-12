@@ -6,9 +6,14 @@
   <title>Weather App || FarmSarthi</title>
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/dgyixpzvl/image/upload/v1752250625/FarmSarthi_Short_Logo_vslfiy.png" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree">
+  <link rel="stylesheet" href="/css/stylehomepage2.css">
   <link rel="stylesheet" href="/css/weather.css" />
+
+
 </head>
 <body>
+    <%- include('component/navbar.ejs') %>
+
   <div class="weather-app">
     <div class="search-bar">
       <input type="text" id="cityInput" placeholder="Enter city name" />
@@ -16,16 +21,13 @@
         <img src="https://res.cloudinary.com/dgyixpzvl/image/upload/v1752250708/Search_a3l7vm.png" alt="Search" width="35" height="35" />
       </button>
     </div>
-    <div id="weather-output">
-      <% if (weatherData) { %>
-        <h2><%= weatherData.name %></h2>
-        <p>Temperature: <%= weatherData.main.temp %>°C</p>
-        <p>Condition: <%= weatherData.weather[0].description %></p>
-      <% } %>
-    </div>
+    <div id="weather-output"></div>
   </div>
+  <%- include('component/footer.ejs') %>
 
   <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
   <script src="/js/weather.js"></script>
+  <script src="js/script.js"></script>
+
 </body>
 </html>
