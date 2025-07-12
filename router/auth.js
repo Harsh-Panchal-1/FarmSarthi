@@ -1,16 +1,18 @@
 const express = require("express");
 const User = require("../model/user");
-const admin = require("../firebase")
+const admin = require("../firebase");
+const checkRoleSelection = require("../middleware/checkRole");
 const router = express.Router();
 
 router.get("/", (req, res) => {
   if (req.session.user) {
     res.redirect("/dashboard");
   } else {
+    const user = req.session.user ? true : false;
     res.render("login",{env:{
       API_KEY: process.env.API_KEY,
       AUTH_DOMAIN: process.env.AUTH_DOMAIN,
-    }});
+    }, isUserLoggedIn: user});
   }
 });
 
@@ -34,6 +36,8 @@ router.post("/verify", async (req, res) => {
       uid: user.uid,
       phone: user.phone,
       role: user.role,
+      name: user.name,
+      address: user.address
     };
 
     res.redirect("/");
@@ -44,19 +48,26 @@ router.post("/verify", async (req, res) => {
 });
 
 
-router.get("/select-role", (req, res) => {
+router.get("/select-role",checkRoleSelection, (req, res) => {
   if (!req.session.user) return res.redirect("/");
-  res.render("selectRole");
+  const user = req.session.user ? true : false;
+  res.render("selectRole", {isUserLoggedIn: user});
 });
 
 // routes/auth.js
 router.post("/select-role", async (req, res) => {
-  const { role } = req.body;
+  const { role, name, address } = req.body;
   if (!req.session.user) return res.redirect("/");
 
   // Save in DB
   const { uid, phone } = req.session.user;
-  await User.create({ uid, phone, role });
+  const user = req.session.user
+    req.session.user = {
+      ...user,
+      name: name,
+      address: address,
+    };
+  await User.create({ uid, phone, role, name, address });
 
   req.session.user.role = role;
   res.redirect("/");

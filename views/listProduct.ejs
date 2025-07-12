@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List a Product || FarmSarthi</title>
+    <link rel="icon" type="image/png" href='https://res.cloudinary.com/dgyixpzvl/image/upload/v1752250625/FarmSarthi_Short_Logo_vslfiy.png'/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="/css/listProduct.css">
+    <link rel="stylesheet" href="/css/stylehomepage2.css">
+</head>
+<body>
+    <%- include("component/navbar.ejs") %>
+
+    <div class="form-container">
+        <div class="form-card card">
+            <h2 class="form-title">List Your Crop or Seed</h2>
+            <p class="form-subtitle">Fill in the details below to put your product on the market.</p>
+            
+            <form action="#" method="POST" id="product-form" enctype="multipart/form-data">
+                
+                <div class="form-group">
+                    <label for="product-name">Crop/Seed Name</label>
+                    <input type="text" id="product-name" name="product-name" placeholder="e.g., Organic Lokwan Wheat" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-photos">Photos of Product</label>
+                    <input type="file" id="product-photos" name="product-photos" accept="image/*" multiple>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-description">Product Description</label>
+                    <textarea id="product-description" name="product-description" rows="4" placeholder="Describe the quality, quantity, and any special features of your product."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Want to Grade the Crop by our Examiner?</label>
+                    <div class="radio-group">
+                        <label for="grade-yes"><input type="radio" id="grade-yes" name="grading" value="yes" checked> Yes</label>
+                        <label for="grade-no"><input type="radio" id="grade-no" name="grading" value="no"> No</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-category">Category of Product</label>
+                    <select id="product-category" name="product-category">
+                        <option value="crop">Crop</option>
+                        <option value="seed">Seed</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-price">Price (per Quintal)</label>
+                    <input type="number" min="0" id="product-price" name="product-price" placeholder="e.g., 2500" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">List the Product on the Platform</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div id="success-popup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <h3>Success!</h3>
+            <p>Your product has been listed on the platform.</p>
+            <a id="close-popup" href="/" class="btn btn-primary">Done</a>
+        </div>
+    </div>
+
+        <%- include('component/footer.ejs') %>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('product-form');
+            const popup = document.getElementById('success-popup');
+            const closeBtn = document.getElementById('close-popup');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault(); // Prevent default page reload
+
+                if (form.checkValidity()) {
+                    popup.style.display = 'flex'; // Show the popup
+                } else {
+                    form.reportValidity(); // Show native browser validation messages
+                }
+            });
+
+            const closePopup = () => {
+                popup.style.display = 'none';
+                form.reset(); // Optionally reset the form fields
+            };
+
+            closeBtn.addEventListener('click', closePopup);
+
+            // Also close popup if user clicks on the dark overlay
+            popup.addEventListener('click', (e) => {
+                if (e.target === popup) {
+                    closePopup();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

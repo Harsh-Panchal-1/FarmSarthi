@@ -1,9 +1,12 @@
 require("dotenv").config();
 const express = require("express");
 const path = require("path");
-const authRoute = require("./router/auth");
 const mongoose = require('mongoose');
 const session = require('express-session');
+
+const authRoute = require("./router/auth");
+const productRoute = require("./router/product");
+const homeRoute = require("./router/home");
 
 const app = express();
 const port = 3000;
@@ -29,12 +32,11 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 
-app.use("/login", authRoute)
+app.use("/", homeRoute);
+app.use("/login", authRoute);
+app.use("/product", productRoute);
 
 
-app.get("/", (req, res) => {
-    res.render("Homepage.ejs");
-});
 app.get("/aboutUs", (req, res) => {
     res.render("Homepage.ejs");
 });
@@ -53,6 +55,19 @@ app.get("/crop-calendar", (req, res) => {
 
 app.get("/login-page", (req, res) => {
     res.render("loginPage.ejs");
+});
+
+app.get('/profile', (req, res) => {
+  // render user profile page
+  res.render('profile', { user: req.user });
+});
+
+
+
+app.post('/logout', (req, res) => {
+  req.session.destroy(() => {
+    res.redirect('/login');
+  });
 });
 
 

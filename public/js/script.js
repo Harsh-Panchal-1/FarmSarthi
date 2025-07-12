@@ -23,3 +23,17 @@ document.addEventListener("DOMContentLoaded", function() {
     e.stopPropagation();
   });
 });
+
+
+  const profileToggle = document.getElementById('profileToggle');
+  const profileDropdown = document.getElementById('profileDropdown');
+
+  profileToggle.addEventListener('click', () => {
+    profileDropdown.style.display = (profileDropdown.style.display === 'block') ? 'none' : 'block';
+  });
+
+  window.addEventListener('click', function (e) {
+    if (!profileToggle.contains(e.target) && !profileDropdown.contains(e.target)) {
+      profileDropdown.style.display = 'none';
+    }
+  });

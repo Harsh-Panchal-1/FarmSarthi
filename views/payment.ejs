@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment || FarmSarthi</title>
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dgyixpzvl/image/upload/v1752250625/FarmSarthi_Short_Logo_vslfiy.png" />
+    <link rel="stylesheet" href="/css/stylehomepage2.css">
+    <link rel="stylesheet" href="/css/payment.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree">
+</head>
+<body>
+    <%- include("component/navbar.ejs") %>
+
+
+    <main class="main-content">
+        <div class="payment-summary-container">
+            <!-- Left Side: Seller and Product Details -->
+            <div class="summary-details">
+                <h2>Order Summary</h2>
+                <div class="detail-item">
+                    <strong>Product:</strong> <span id="product-name">Basmati Rice (Pusa 1121)</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Seller:</strong> <span id="seller-name">Kisan Singh</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Contact Number:</strong> <span id="seller-contact">+91 98765 43210</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Expected Delivery: </strong> <span id="seller-contact">16 July 2025</span>
+                </div>
+                <div class="seller-grade grade-a">A Grade</div>
+                <div class="detail-item product-rate">
+                    <strong>Rate:</strong> ₹ <span id="product-rate-value">6500</span><span class="unit">/Quintal</span>
+                </div>
+
+            </div>
+
+            <!-- Right Side: Quantity Selection and Total Calculation -->
+            <div class="calculation-section">
+                <h2>Calculate Total Price</h2>
+                <div class="quantity-input-group">
+                    <label for="quantity">Quantity (Quintals):</label>
+                    <input type="number" id="quantity" value="1" min="1">
+                </div>
+                <div class="total-price-display">
+                    Total: ₹ <span id="total-price">6500</span>
+                </div>
+                <button class="confirm-button">Confirm Deal</button>
+            </div>
+        </div>
+    </main>
+
+    <%- include('component/footer.ejs') %>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const quantityInput = document.getElementById('quantity');
+            const productRateElement = document.getElementById('product-rate-value');
+            const totalPriceElement = document.getElementById('total-price');
+
+            // Initial product rate (from the example, can be dynamic)
+            const productRate = parseFloat(productRateElement.textContent);
+
+            // Function to calculate and update total price
+            function updateTotalPrice() {
+                const quantity = parseInt(quantityInput.value);
+                if (isNaN(quantity) || quantity < 1) {
+                    quantityInput.value = 1; // Reset to 1 if invalid
+                    totalPriceElement.textContent = productRate.toFixed(2);
+                } else {
+                    const total = productRate * quantity;
+                    totalPriceElement.textContent = total.toFixed(2);
+                }
+            }
+
+            // Event listener for quantity input changes
+            quantityInput.addEventListener('input', updateTotalPrice);
+
+            // Set initial total price on page load
+            updateTotalPrice();
+
+            // Toggle Mega Menu visibility
+            const navLinkDropdown = document.querySelector('.nav-link-dropdown');
+            const megaMenu = document.querySelector('.mega-menu');
+
+            if (navLinkDropdown && megaMenu) {
+                navLinkDropdown.addEventListener('click', function() {
+                    megaMenu.classList.toggle('open');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

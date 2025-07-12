@@ -1,0 +1,224 @@
+/* CSS Variables for Colors from the Homepage */
+:root {
+    --primary-green: #344E41;
+    --secondary-green: rgb(7, 57, 0);
+    --light-green: #A3B18A;
+    --background-color: #FFFFFF;
+    --card-bg: #FFFFFF;
+    --text-dark: #212529;
+    --text-light: #6c757d;
+    --border-color: #EAEAEA;
+    --font-family: 'Figtree', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color) !important;
+    color: var(--text-dark);
+}
+
+/* Main Product Detail Container */
+.product-detail-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* Left Column: Product Gallery */
+.product-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-image img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.thumbnail-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+
+.thumbnail-gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.thumbnail-gallery img:hover, .thumbnail-gallery img.active {
+    border-color: var(--primary-green);
+}
+
+/* Right Column: Product Info & Sellers */
+.product-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.breadcrumbs {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+.breadcrumbs a { color: var(--secondary-green); text-decoration: none; }
+
+.product-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.product-meta .delivery-time {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.truck{
+    width: 1.1rem;
+}
+
+.product-description {
+    line-height: 1.7;
+    color: var(--text-dark);
+}
+
+.price-and-cart {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem;
+    background-color: #F8F9FA;
+    border-radius: 12px;
+}
+
+.price-details .price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+.price-details .unit {
+    font-size: 1rem;
+    color: var(--text-light);
+}
+
+.add-to-cart-main {
+    background-color: var(--secondary-green);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.add-to-cart-main:hover {
+    border-color: black;
+    border: 1px solid;
+  color: black;
+  background-color: #E6EBE5;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* Sellers Section */
+.sellers-section {
+    background-color: #F8F9FA;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.sellers-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.sellers-header h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.grade-filter select {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+.seller-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.seller-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+.seller-item:hover{
+    background-color: #E6EBE5;
+    cursor: pointer;
+}
+
+.seller-name { font-weight: 600; }
+.seller-grade {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+.grade-a { background-color: var(--secondary-green); }
+.grade-b { background-color: #f49600; }
+.grade-c { background-color: #d62828; }
+
+.seller-price { font-weight: 700; font-size: 1.1rem; }
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .product-detail-container {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .main-header { flex-wrap: wrap; gap: 1rem; }
+    .search-bar { order: 3; width: 100%; }
+    .delivery-info { display: none; }
+    .product-detail-container { padding: 0 1rem; margin-top: 1rem; }
+    .product-title { font-size: 2rem; }
+    .price-and-cart { flex-direction: column; align-items: stretch; text-align: center; }
+}
