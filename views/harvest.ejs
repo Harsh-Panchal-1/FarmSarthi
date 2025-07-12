@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Harvest Techniques | FarmSarthi</title>
+  <link rel="stylesheet" href="/css/harvest.css">
+  <link rel="stylesheet" href="/css/stylehomepage2.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <%- include("component/navbar.ejs") %>
+
+  <header class="harvest-header">
+    <h1>🌿 Harvest Techniques</h1>
+    <p>Improve your yield with smart, modern harvesting methods tailored for different crops.</p>
+  </header>
+
+  <section class="crop-technique-list">
+
+    <!-- Wheat -->
+    <div class="technique-card">
+      <h2>🌾 Wheat</h2>
+      <p><strong>Traditional:</strong> Manual sickle harvesting — labor-intensive and slow.</p>
+      <p><strong>Innovative:</strong> Use of mini harvesters with sensors to reduce grain loss and speed up the process.</p>
+      <p class="tip">💡 Tip: Harvest early morning to reduce shattering and moisture issues.</p>
+    </div>
+
+    <!-- Rice -->
+    <div class="technique-card">
+      <h2>🌾 Rice</h2>
+      <p><strong>Traditional:</strong> Hand-cutting and sun drying in fields.</p>
+      <p><strong>Innovative:</strong> Combine harvesters + mechanical dryers = 30% faster processing and better grain quality.</p>
+      <p class="tip">💡 Tip: Don’t delay harvest after full maturity—risk of lodging and cracking increases.</p>
+    </div>
+
+    <!-- Sugarcane -->
+    <div class="technique-card">
+      <h2>🍬 Sugarcane</h2>
+      <p><strong>Traditional:</strong> Manual cutting and bundling.</p>
+      <p><strong>Innovative:</strong> Hydraulic harvesters reduce cutting time by 60% and improve juice yield.</p>
+      <p class="tip">💡 Tip: Harvest when sucrose content is highest (about 11–12 months after planting).</p>
+    </div>
+
+    <!-- Tomatoes -->
+    <div class="technique-card">
+      <h2>🍅 Tomatoes</h2>
+      <p><strong>Traditional:</strong> Picked manually at full ripeness, high spoilage during transport.</p>
+      <p><strong>Innovative:</strong> Use semi-ripe harvest + ventilated crates + cold chain = longer shelf life, higher profits.</p>
+      <p class="tip">💡 Tip: Avoid harvesting in wet conditions to prevent fungal spoilage.</p>
+    </div>
+
+    <!-- Cotton -->
+    <div class="technique-card">
+      <h2>🧵 Cotton</h2>
+      <p><strong>Traditional:</strong> Hand-picking in multiple rounds.</p>
+      <p><strong>Innovative:</strong> Use of spindle or picker-type harvesters reduces labor cost by 70%.</p>
+      <p class="tip">💡 Tip: Use defoliants 7–10 days before harvest for cleaner cotton.</p>
+    </div>
+
+  </section>
+  <%- include('component/footer.ejs') %>
+</body>
+</html>

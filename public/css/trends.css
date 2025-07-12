@@ -1,0 +1,65 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #e3f2fd;
+  color: #333;
+}
+
+.trends-header {
+  text-align: center;
+  background: #073900;
+  color: white;
+  padding: 2rem 1rem;
+}
+
+.trends-header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.trends-header p {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.trend-list {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.trend-card {
+  background: white;
+  border-left: 8px solid #558b2f;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.trend-card:hover {
+  transform: translateY(-4px);
+}
+
+.trend-card h2 {
+  margin-top: 0;
+  color: #073900;
+  font-size: 1.4rem;
+}
+
+.trend-card p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.insight {
+  background: #f1f8e9;
+  padding: 0.8rem 1rem;
+  border-left: 5px solid #558b2f;
+  border-radius: 8px;
+}
