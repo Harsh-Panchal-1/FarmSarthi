@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mandi Market Portal</title>
+  <link rel="stylesheet" href="/css/stylehomepage2.css" />
+  <link rel="stylesheet" href="/css/marketPrices.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap">
+</head>
+<body>
+    <%- include("component/navbar.ejs") %>
+  <div class="appheader">
+    <h1>Mandi Market Portal</h1>
+    <p>Get crop pricing data by Indian State</p>
+  </div>
+
+  <div class="controls">
+    <input id="search_input" placeholder="Enter state name (e.g., Punjab)" /> 
+    <button id="btn_search">Search</button>
+    <button id="btn_reset">Reset</button>
+    <button id="btn_sort_price">Sort by Price</button>
+    <button id="btn_sort_district">Sort by District</button>
+    <button id="btn_sort_state">Sort by State</button>
+  </div>
+ 
+  <canvas id="priceChart" width="600" height="300"></canvas>
+
+
+
+
+  <div id="lastUpdated"></div>
+  <div id="display_mandi"></div>
+   <div id="pagination" class="pagination-controls"></div>
+  <%- include("component/footer.ejs") %>
+  <script src="/js/script.js"></script>
+  <script src="/js/marketPrices.js"></script>
+</body>
+</html>

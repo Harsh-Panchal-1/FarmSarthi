@@ -1,0 +1,226 @@
+:root {
+    --primary-bg: #E6EBE5;
+    --primary-dark-green: #073900;
+    --primary-light-green: rgba(7, 57, 0, 0.153);
+    --text-dark: #333;
+    --text-light: #fff;
+    --border-color: #ddd;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Figtree', sans-serif;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+}
+
+.main-content {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.left-panel, .right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.welcome-card h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-dark-green);
+}
+
+.welcome-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--primary-dark-green);
+    border-bottom: 2px solid var(--primary-light-green);
+    padding-bottom: 10px;
+}
+
+.order-list .order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.order-list .order-item:last-child {
+    border-bottom: none;
+}
+
+.order-info h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.order-info p {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.order-status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-ongoing {
+    background-color: #fff0c2;
+    color: #f39c12;
+}
+
+.status-completed {
+    background-color: #d4edda;
+    color: #28a745;
+}
+
+.status-transit {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.revenue-graph {
+    height: 300px;
+}
+
+.profile-card {
+    text-align: center;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    border: 4px solid var(--primary-dark-green);
+}
+
+.profile-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.profile-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.action-buttons .btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-dark-green);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: #052a00;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--primary-light-green);
+    color: var(--primary-dark-green);
+    border: 2px solid var(--primary-dark-green);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-dark-green);
+    color: var(--text-light);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .dashboard-grid {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+@media (max-width: 992px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    .right-panel {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .profile-card, .action-card {
+        flex: 1 1 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .right-panel {
+        flex-direction: column;
+    }
+    .welcome-card h2 {
+        font-size: 1.5rem;
+    }
+    .card-title {
+        font-size: 1.2rem;
+    }
+}

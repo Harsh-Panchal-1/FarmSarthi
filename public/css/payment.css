@@ -1,0 +1,126 @@
+.payment-summary-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.summary-details, .calculation-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 30px;
+    flex: 1;
+    min-width: 300px;
+}
+
+.summary-details h2, .calculation-section h2 {
+    font-size: 1.8em;
+    color: #073900; /* Dark green from your theme */
+    margin-bottom: 25px;
+    border-bottom: 2px solid #E6EBE5; /* Light background color for subtle line */
+    padding-bottom: 10px;
+}
+
+.detail-item {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.detail-item strong {
+    color: #073900;
+    margin-right: 5px;
+}
+
+.product-rate {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #073900;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc;
+}
+
+.seller-grade {
+    width: 5rem;
+    padding: 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    vertical-align: center;
+    text-align: center;
+}
+.grade-a { background-color: rgb(7, 57, 0); }
+.grade-b { background-color: #f49600; }
+.grade-c { background-color: #d62828; }
+
+.quantity-input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.quantity-input-group label {
+    font-size: 1.1em;
+    color: #333;
+    font-weight: 500;
+}
+
+.quantity-input-group input[type="number"] {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
+}
+
+.total-price-display {
+    font-size: 2em;
+    font-weight: 700;
+    color: #073900;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #E6EBE5;
+    text-align: right;
+}
+
+.confirm-button {
+    background-color: rgb(7, 57, 0); /* Dark green from your theme */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.confirm-button:hover {
+    background-color: #E6EBE5; /* Light background color on hover */
+    color: #073900;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .payment-summary-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .summary-details, .calculation-section {
+        width: 100%;
+        max-width: 500px; /* Limit width on smaller screens for better readability */
+    }
+}

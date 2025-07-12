@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmSarthi</title>
+    <link rel="icon" type="image/png" href="img/FarmSarthi Short Logo.png"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="/css/stylehomepage2.css">
+    <link rel="stylesheet" href="/css/sellerDashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <%- include("component/navbar.ejs") %>
+    <div class="dashboard-container">
+        <div class="main-content">
+            <div class="welcome-card card">
+                <h2>Welcome <%= user.name %></h2>
+                <p>Here's a summary of your activity on FarmSarthi.</p>
+            </div>
+            <div class="dashboard-grid">
+                <div class="left-panel">
+                    <div class="card">
+                        <h3 class="card-title">Your Buying Orders</h3>
+                        <div class="order-list">
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <h4>Paddy Seeds (Sona Masuri) - 10kg</h4>
+                                    <p>Order #FS-B-91121 - Seller: National Seeds Corp</p>
+                                </div>
+                                <span class="order-status status-transit">In Transit</span>
+                            </div>
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <h4>Tomato Seeds (Hybrid F1) - 5 Packets</h4>
+                                    <p>Order #FS-B-90875 - Seller: Local Agro Store</p>
+                                </div>
+                                <span class="order-status status-completed">Delivered</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Your Sell Orders</h3>
+                        <div class="order-list">
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <h4>Wheat Grains (Lokwan) - 50 Quintal</h4>
+                                    <p>Order #FS-S-84321 - Buyer: ABC Traders</p>
+                                </div>
+                                <span class="order-status status-ongoing">Ongoing</span>
+                            </div>
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <h4>Basmati Rice (Pusa 1121) - 20 Quintal</h4>
+                                    <p>Order #FS-S-84199 - Buyer: Star Exports</p>
+                                </div>
+                                <span class="order-status status-completed">Completed</span>
+                            </div>
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <h4>Soybean (JS-335) - 100 Quintal</h4>
+                                    <p>Order #FS-S-84150 - Buyer: Local Mill</p>
+                                </div>
+                                <span class="order-status status-completed">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Revenue</h3>
+                        <div class="revenue-graph">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-panel">
+                    <div class="profile-card card">
+                        <img src="img/HP.jpeg" alt="Seller Photo" class="profile-photo">
+                        <h3><%= user.name %></h3>
+                        <p><%= user.address %></p>
+                    </div>
+                    <div class="action-card card">
+                        <h3 class="card-title">Seller Actions</h3>
+                        <div class="action-buttons">
+                            <a href="/list-product" class="btn btn-primary">List Crop/Seed</a>
+                            <a href="#" class="btn btn-secondary">Announce Pre-Booking</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <%- include('component/footer.ejs') %>
+        
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx = document.getElementById('revenueChart').getContext('2d');
+            const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+            gradient.addColorStop(0, 'rgba(7, 57, 0, 0.5)');
+            gradient.addColorStop(1, 'rgba(7, 57, 0, 0)');
+
+            const revenueChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                    datasets: [{
+                        label: 'Revenue (in ₹)',
+                        data: [15000, 22000, 18000, 27000, 32000, 25000, 40000],
+                        backgroundColor: gradient,
+                        borderColor: '#073900',
+                        borderWidth: 3,
+                        pointBackgroundColor: '#073900',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#073900',
+                        tension: 0.4,
+                        fill: true,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: '#eef2ed'
+                            },
+                            ticks: {
+                                callback: function(value, index, values) {
+                                    return '₹' + value / 1000 + 'k';
+                                }
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: '#073900',
+                            titleFont: {
+                                size: 14,
+                                family: 'Figtree'
+                            },
+                            bodyFont: {
+                                size: 12,
+                                family: 'Figtree'
+                            },
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(context.parsed.y);
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

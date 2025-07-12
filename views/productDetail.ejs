@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/https://res.cloudinary.com/dgyixpzvl/image/upload/v1752250625/FarmSarthi_Short_Logo_vslfiy.png"
+    />
+
+    <title>FarmSarthi</title>
+    <link rel="stylesheet" href="/css/wheatGrain.css" />
+    <link rel="stylesheet" href="/css/stylehomepage2.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Figtree"
+    />
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <%- include("component/navbar.ejs") %>
+    <!-- Main Page Content -->
+    <main class="product-detail-container">
+      <!-- Product Gallery (Left) -->
+      <section class="product-gallery">
+        <div class="main-image">
+          <img
+            id="mainProductImage"
+            src="<%= data.gallery[0] %>"
+            alt="Wheat Grains"
+          />
+        </div>
+        <div class="thumbnail-gallery">
+          <img
+            src="<%= data.gallery[0] %>"
+            alt="Wheat thumbnail 1"
+            class="active"
+            onclick="changeImage(this.src)"
+          />
+          <img
+            src="<%= data.gallery[1] %>"
+            alt="Wheat thumbnail 1"
+            class="active"
+            onclick="changeImage(this.src)"
+          />
+          <img
+            src="<%= data.gallery[2] %>"
+            alt="Wheat thumbnail 2"
+            onclick="changeImage(this.src)"
+          />
+          <img
+            src="<%= data.gallery[3] %>"
+            alt="Wheat field thumbnail"
+            onclick="changeImage(this.src)"
+          />
+          <img
+            src="<%= data.gallery[4] %>"
+            alt="Sack of wheat thumbnail"
+            onclick="changeImage(this.src)"
+          />
+        </div>
+      </section>
+
+      <!-- Product Info & Sellers (Right) -->
+      <section class="product-info-wrapper">
+        <div class="product-main-details">
+          <!-- <div class="breadcrumbs">
+                <a href="#">Home</a> / <a href="#">Popular Crops</a> / Wheat Grains
+            </div> -->
+          <h1 class="product-title"><%= data.name %></h1>
+          <div class="product-meta">
+            <div class="delivery-time">
+              <img
+                src="https://res.cloudinary.com/dgyixpzvl/image/upload/v1752251901/truck-fast-solid_ushwrj.svg"
+                class="truck"
+              />
+              Estimated delivery in 2 days
+            </div>
+          </div>
+          <p class="product-description"><%= data.description %></p>
+          <div class="price-and-cart">
+            <div class="price-details">
+              <div class="price">₹<%= data.price %></div>
+              <div class="unit">(per Quintal)</div>
+            </div>
+
+            <form action="/payment" method="get">
+              <button type="submit" class="add-to-cart-main">Buy Now</button>
+            </form>
+            
+          </div>
+        </div>
+
+        <!-- Sellers Section -->
+        <div class="sellers-section">
+          <div class="sellers-header">
+            <h3>Available from other sellers</h3>
+            <div class="grade-filter">
+              <select name="grade" id="grade-select">
+                <option value="all">All Grades</option>
+                <option value="a">A Grade</option>
+                <option value="b">B Grade</option>
+                <option value="c">C Grade</option>
+              </select>
+            </div>
+          </div>
+          <div class="seller-list">
+            <div class="seller-item">
+              <div class="seller-name">Ramkishan Farms</div>
+              <div class="seller-grade grade-a">A Grade</div>
+              <div class="seller-price">₹2550</div>
+            </div>
+            <div class="seller-item">
+              <div class="seller-name">Sehore Mandi Traders</div>
+              <div class="seller-grade grade-b">B Grade</div>
+              <div class="seller-price">₹2480</div>
+            </div>
+            <div class="seller-item">
+              <div class="seller-name">Gupta Agro Store</div>
+              <div class="seller-grade grade-a">A Grade</div>
+              <div class="seller-price">₹2600</div>
+            </div>
+            <div class="seller-item">
+              <div class="seller-name">Local Farmer Co-op</div>
+              <div class="seller-grade grade-c">C Grade</div>
+              <div class="seller-price">₹2300</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include("component/footer.ejs") %>
+    <script src="js/script.js"></script>
+    <script>
+      // Simple JavaScript to handle image gallery functionality
+      function changeImage(newSrc) {
+        // Set the main image source to the clicked thumbnail's source
+        document.getElementById("mainProductImage").src = newSrc.replace(
+          "100x100",
+          "600x600"
+        );
+
+        // Update the 'active' class on thumbnails
+        const thumbnails = document.querySelectorAll(".thumbnail-gallery img");
+        thumbnails.forEach((thumb) => {
+          // Check if the thumbnail's src corresponds to the new main image src
+          if (newSrc.includes(thumb.src.split("?text=")[1])) {
+            thumb.classList.add("active");
+          } else {
+            thumb.classList.remove("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
