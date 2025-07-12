@@ -99,6 +99,11 @@ app.get("/aboutus", (req, res) => {
   res.render("aboutUs", { isUserLoggedIn });
 });
 
+app.get("/weather", (req, res) => {
+  const isUserLoggedIn = req.session.user ? true : false;
+  res.render("weather", { isUserLoggedIn });
+});
+
 app.get('/tips', async (req, res) => {
   const tips = await readTips();
   const page = parseInt(req.query.page) || 1;

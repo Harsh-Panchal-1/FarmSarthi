@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Figtree', sans-serif !important;
+    box-sizing: border-box;
+}
+
+body {
+  background-color: #E6EBE5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #fff;
+}
+
+
+.weather-app {
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+
+.search-bar {
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 1.3rem;
+  width: 100%;
+  border: none;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  font-size: 1.2rem;
+}
+
+.search-bar button {
+  background: white;
+  border: none;
+  border-radius: 0 25px 2px 0;
+  padding: 0 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+
+.weather-card {
+  display: none;
+  background: #073900;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.weather-icon {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.weather-data h1 {
+  font-size: 48px;
+  margin-bottom: 5px;
+}
+
+.weather-data h2 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+
+.weather-details {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail-item p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.detail-item small {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+
+.error-msg {
+  background: rgba(255, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 15px;
+  font-weight: bold;
+}
+.forecast-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.forecast-day {
+    background:#0f5c00;
+    border-radius: 10px;
+    padding: 10px;
+    width: 110px;
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.forecast-day:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid white;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+
+.forecast-day img {
+    margin: 5px 0;
+}
