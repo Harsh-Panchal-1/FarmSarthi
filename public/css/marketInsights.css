@@ -1,5 +1,8 @@
+*{
+  font-family: 'Figtree', sans-serif !important;
+}
+
 body {
-  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   background: #f9fbe7;
@@ -34,7 +37,7 @@ body {
 
 .tip-card {
   background: white;
-  border-left: 5px solid #073900;
+  border-left: 8px solid #558b2f;
   padding: 1.5rem 2rem;
   border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -42,6 +45,7 @@ body {
 }
 
 .tip-card:hover {
+  border-left: 8px solid #073900;
   transform: translateY(-4px);
 }
 

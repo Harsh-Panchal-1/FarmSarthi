@@ -1,7 +1,10 @@
+*{
+  font-family: 'Figtree', sans-serif !important;
+}
+
 body {
-  font-family: 'Poppins', sans-serif;
   margin: 0;
-  background-color: #fffde7;
+  background-color: #E6EBE5;
   color: #333;
 }
 

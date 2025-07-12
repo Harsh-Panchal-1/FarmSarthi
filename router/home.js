@@ -11,7 +11,7 @@ router.get("/", async (req,res) =>{
 })
 router.get("/market-prices", async (req,res) =>{
     const user = req.session.user ? true : false;
-     const states = [
+    const states = [
     'Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chhattisgarh',
     'Delhi','Goa','Gujarat','Haryana','Himachal Pradesh','Jharkhand',
     'Karnataka','Kerala','Madhya Pradesh','Maharashtra','Manipur',
