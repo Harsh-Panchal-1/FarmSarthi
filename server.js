@@ -4,6 +4,11 @@ const path = require("path");
 const mongoose = require('mongoose');
 const session = require('express-session');
 
+const fs = require('fs');
+const tipsFile = path.join(__dirname, 'farming_tips.json');
+const readTips = () => JSON.parse(fs.readFileSync(tipsFile));
+
+
 const authRoute = require("./router/auth");
 const productRoute = require("./router/product");
 const homeRoute = require("./router/home");
@@ -90,13 +95,23 @@ app.get("/trends", (req, res) => {
   res.render("trends", { isUserLoggedIn });
 });
 
-app.get("/tips", (req, res) => {
-  const isUserLoggedIn = req.session.user ? true : false;
-  res.render("tips", { isUserLoggedIn });
+app.get('/tips', (req, res) => {
+  const tips = readTips();
+  const page = parseInt(req.query.page) || 1;
+  const perPage = 10;
+
+  const start = (page - 1) * perPage;
+  const end = page * perPage;
+
+  const paginatedTips = tips.slice(start, end);
+  const totalPages = Math.ceil(tips.length / perPage);
+
+  res.render('farmingtips', {
+    farming_tips: paginatedTips,
+    currentPage: page,
+    totalPages: totalPages
+  });
 });
-
-
-
 
 
 app.get("/seller-detail", (req, res) => {
